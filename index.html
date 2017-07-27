@@ -10,12 +10,35 @@
 <!-- 添加首页样式 -->
 <script type="text/javascript" src="js/MainDefault.js"></script>
 <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+<!-- 添加时针 -->
+
+<script type="text/javascript">
+	window.onload=function(){
+		setBodyHeight();
+	}
+</script>
 <style type="text/css">
 
 	a:link{color: #3D8AE5} 		/*未被访问的颜色*/
 	a:visited{color: #3D8AE5} 		/*访问后的颜色*/
 	a:hover{color: green} 		/*鼠标在链接上的颜色*/
 	a:active{color: green} 		/*鼠标点击链接的颜色*/
+
+	.div_click{
+		width: 250px;
+		height: 90px;
+		position: fixed;
+		top: 100px;
+		right: 0px;
+		background-color: #EEEEEE;
+		border: 1px solid #ffffff;
+	}
+
+	.div_click_1{
+		width: 160px;
+		height: 70px;
+		margin: 0px 45px 20px;
+	}
 
 </style>
 </head>
@@ -30,6 +53,11 @@
 			<li><a href="GetAndPost.html" >Get和Post的区别…………2017-7-27</a></li>	
 			<li><a href="HtmlLine.html">如何在Html中画一条线…………2017-7-27</a></li>		
 		</ol>
+    </div>
+    <div class="div_click">
+    	<div class="div_click_1">
+    		<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+    	</div>
     </div>
 </body>
 </html>
