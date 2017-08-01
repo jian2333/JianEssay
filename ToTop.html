@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>返回页面顶部</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <!-- 首页样式 -->
+    <script type="text/javascript" src="js/totop.js"></script>
+    <script type="text/javascript" src="js/MainDefault.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        setBodyHeight();
+        setBodyWidth();
+
+    }
+    </script>
+    <style type="text/css">
+    a:link {
+        color: #3D8AE5
+    }
+    
+    a:visited {
+        color: #3D8AE5
+    }
+    
+    a:hover {
+        color: red
+    }
+    
+    a:active {
+        color: red
+    }
+    
+    .bodyleft h4 {
+        color: #008080
+    }
+    
+    .bodyleft p {
+        text-indent: 2em;
+    }
+    
+    .bodyleft span {
+        text-indent: 2em;
+    }
+    
+    .p_line {
+        line-height: 5px;
+    }
+    /*测试样式*/
+    
+    .btnTop1 {
+        position: absolute;
+        right: 2%;
+        bottom: 2%;
+        cursor: pointer;
+        opacity: .7;
+        z-index: 9;
+    }
+    
+    .btnTop:hover {
+        opacity: 1;
+    }
+    
+    .imageTop {
+        height: 72px;
+        height: 72px;
+    }
+    
+    .aTop {
+        position: fixed;
+        right: 2%;
+        bottom: 2%;
+        cursor: pointer;
+        opacity: .7;
+        z-index: 9;
+    }
+    
+    .aTop:hover {
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="myhead" class="div_head">
+        <h2>[转]返回页面顶部Top</h2>
+    </div>
+    <div id="mybody" class="div_body bodyleft">
+        <h2 style="font-size:16px;color: #3D8AE5;padding-left: 10px "><a href="http://www.cnblogs.com/yc-755909659/p/5988005.html" target="_blank" class="a_nounderline">[转]【JavaScript Demo】回到页面顶部Top</a></h2>
+        <hr>
+        <p>
+            随着网站的不断发展，需要展示的内容也越来越丰富，这导致网页上能展示的内容越来越多。当内容堆积影响了用户体验，就需要考虑如何提升用户体验。在这一系列改动种，"回到顶部"的功能成了一个经典。
+        </p>
+        <br>
+        <h3>1.最有效的静态返回页面顶部，点击直接跳转页面顶部，常见于固定放置在页面底部返回顶部功能。</h3>
+        <p>
+            方法一：用命名锚点击返回到顶部预设的id为top的元素
+        </p>
+        <p>
+            <div class="div_detail">
+                <p>代码如下：</p>
+                <p>&lt;a href=&quot;#top&quot; target=&quot;_selt&quot;&gt;返回顶部&lt;/a&gt;</p>
+            </div>
+        </p>
+        <p>
+            方法二：操作scroll函数来控制滚动条的位置(第一个参数是水平位置，第二个参数是垂直位置)
+        </p>
+        <p>
+            <div class="div_detail">
+                <p>代码如下：</p>
+                <p>&lt;a href=&quot;javascript:srcoll(0,0)&quot;&gt;返回顶部&lt;/a&gt;</p>
+            </div>
+        </p>
+        <p class="p_line">
+            缺点：返回效果是立即的，不符合一般浏览页面的滚动习惯；
+        </p>
+        <p class="p_line">
+            静态固定于页面底部，用户不一定看得到。
+        </p>
+        <br>
+        <h3>简单的静态返回顶部，用js模拟滚动效果上滑至顶部</h3>
+        <h4>1.页面布局</h4>
+        <p>
+            (1)我们先简单的搭建一个长度为1200px的页面，保证视口的足够高度。
+        </p>
+        <p>
+            <div class="div_detail">
+                <pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">lang</span><span style="color: #0000ff;">="en"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">charset</span><span style="color: #0000ff;">="UTF-8"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">meta </span><span style="color: #ff0000;">content</span><span style="color: #0000ff;">="width=device-width,user-scalable=no"</span><span style="color: #ff0000;"> name</span><span style="color: #0000ff;">="viewport"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>Back to top<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/css"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+        #content </span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;"> height</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> 1200px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+        .text_center </span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;"> text-align</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;"> center</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="content"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>往下拉哟<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">br </span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>&darr;<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">br </span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>&darr;<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">br </span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>&darr;<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">br </span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>&darr;<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;&lt;</span><span style="color: #800000;">br </span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="text_center"</span><span style="color: #0000ff;">&gt;</span>&darr;<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+                <!-- 文本开始 -->
+                <!-- <textarea class="div_detail" style="height: 370px;resize: none;" readonly="readonly">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width,user-scalable=no" name="viewport" />
+        <title>Back to top</title>
+        <style type="text/css">
+            #content { height: 1200px;}
+            .text_center { text-align: center;}
+        </style>
+    </head>
+    <body>
+    <div id="content">
+        <div class="text_center">往下拉哟</div><br />
+        <div class="text_center">↓</div><br />
+        <div class="text_center">↓</div><br />
+        <div class="text_center">↓</div><br />
+        <div class="text_center">↓</div><br />
+        <div class="text_center">↓</div>
+    </div>
+    </body>
+    </html>
+</textarea> -->
+                <!-- 文本结束 -->
+            </div>
+        </p>
+        <p>
+            (2)然后我们准备一张图片作为返回顶部的按钮：
+            <br>
+        </p>
+        <p>
+            <img src="image/totop.png">
+        </p>
+        <p>
+            (3)接着，我们把按钮放到网页上去：
+        </p>
+        <p>
+            HTML代码：
+        </p>
+        <p>
+            <div class="div_detail">
+                <pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;"> 
+  ...
+</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="btnTop"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="btnTop"</span><span style="color: #ff0000;"> href</span><span style="color: #0000ff;">="javascript:;"</span><span style="color: #ff0000;"> title</span><span style="color: #0000ff;">="Back to top"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">img </span><span style="color: #ff0000;">src</span><span style="color: #0000ff;">="img/o_to_Top.png"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="imageTop"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">a</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span></pre>
+                <!--          <textarea class="div_detail" style="height: 150px;resize:none;" readonly="readonly">
+    <body> 
+      ...
+    <a id="btnTop" class="btnTop" href="javascript:;" title="Back to top">
+        <img src="img/o_to_Top.png" class="imageTop">
+    </a>
+    </body>
+        </textarea>   -->
+            </div>
+        </p>
+        <p>
+            CSS代码：
+        </p>
+        <p>
+            <div class="div_detail">
+                <pre><span style="color: #800000;">.btnTop </span>{ <span style="color: #ff0000;">position</span>:<span style="color: #0000ff;"> fixed</span>; <span style="color: #ff0000;">right</span>:<span style="color: #0000ff;"> 2%</span>; <span style="color: #ff0000;">bottom</span>:<span style="color: #0000ff;"> 2%</span>; <span style="color: #ff0000;">cursor</span>:<span style="color: #0000ff;"> pointer</span>; <span style="color: #ff0000;">opacity</span>:<span style="color: #0000ff;"> .7</span>; <span style="color: #ff0000;">z-index</span>:<span style="color: #0000ff;"> 9</span>; }<span style="color: #800000;">
+.btnTop:hover </span>{<span style="color: #ff0000;"> opacity</span>:<span style="color: #0000ff;"> 1</span>;}<span style="color: #800000;">
+.imageTop </span>{<span style="color: #ff0000;"> height</span>:<span style="color: #0000ff;"> 72px</span>;<span style="color: #ff0000;"> height</span>:<span style="color: #0000ff;"> 72px</span>;}</pre>
+                <!--                 <textarea class="div_detail" style="height:100px;resize: none;" readonly="readonly">
+    .btnTop { position: fixed; right: 2%; bottom: 2%; cursor: pointer; opacity: .7; z-index: 9; }
+    .btnTop:hover { opacity: 1;}
+    .imageTop { height: 72px; height: 72px;}                
+                </textarea> -->
+            </div>
+        </p>
+        <p>
+            现在的显示效果：
+        </p>
+        <p>
+            <div class="div_detail" style="width:300px;height: 600px;text-align: center;position: relative;background-color: #ffffff">
+                <div id="content">
+                    <div class="text_center">往下拉哟</div>
+                    <br />
+                    <div class="text_center">↓</div>
+                    <br />
+                    <div class="text_center">↓</div>
+                    <br />
+                    <div class="text_center">↓</div>
+                    <br />
+                    <div class="text_center">↓</div>
+                    <br />
+                    <div class="text_center">↓</div>
+                </div>
+                <a id="btnTop" class="btnTop1" href="javascript:;" title="Back to top">
+                    <img src="image/totop.png" class="imageTop">
+                </a>
+            </div>
+        </p>
+        <h4>2.添加JS实现效果</h4>
+        <p>
+            原理：通过控制当前视口顶端的数值来实现。
+        </p>
+        <p>返回顶部按钮默认不显示，当下滑到一定距离时显示。点击按钮后，当前页面由快到慢地返回页面顶部。</p>
+        <p>实现：</p>
+        <p>我们先让返回页面按钮默认不显示：</p>
+        <p>
+            <div class="div_detail">
+                <pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">a </span><span style="color: #ff0000;">id</span><span style="color: #0000ff;">="btnTop"</span><span style="color: #ff0000;"> style</span><span style="color: #0000ff;">="display:none;" ...</span></pre>
+                <!--                 <textarea class="div_detail" style="height: 40px;resize: none;" readonly="readonly">
+    <a id="btnTop" style="display:none;" ...
+                </textarea> -->
+            </div>
+        </p>
+        <p>然后，我们新建JavaScript文件并引用，具体功能实现代码如下，应该备注的比较详细：</p>
+        <p>
+            <div class="div_detail">
+                <pre>window.onload = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+    </span><span style="color: #0000ff;">var</span> btnTop = document.getElementById("btnTop"<span style="color: #000000;">);
+    </span><span style="color: #0000ff;">var</span> timer = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+
+    window.onscroll </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+        </span><span style="color: #0000ff;">var</span> backTop =<span style="color: #000000;"> getScrollTop();
+        </span><span style="color: #0000ff;">if</span>(backTop &gt;= 20){ <span style="color: #008000;">//</span><span style="color: #008000;">当前视口顶端大于等于20时，显示返回顶部的按钮</span>
+            btnTop.style.display = "block"<span style="color: #000000;">;
+        }</span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            btnTop.style.display </span>= "none"<span style="color: #000000;">;
+        }
+    };
+
+    btnTop.onclick </span>= <span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">定时执行</span>
+        timer = setInterval(<span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+            </span><span style="color: #0000ff;">var</span> backTop =<span style="color: #000000;"> getScrollTop();
+            </span><span style="color: #0000ff;">var</span> speedTop = backTop / 10<span style="color: #000000;">;
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">修改当前视口的数值，产生向上活动的效果</span>
+            setScrollTop(backTop -<span style="color: #000000;"> speedTop);
+            </span><span style="color: #0000ff;">if</span>(backTop == 0<span style="color: #000000;">){
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">结束函数执行</span>
+<span style="color: #000000;">                clearInterval(timer);
+            }
+        },</span>30<span style="color: #000000;">);
+    };
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">获取当前视口的顶端数值</span>
+    <span style="color: #0000ff;">var</span> getScrollTop = <span style="color: #0000ff;">function</span><span style="color: #000000;">(){
+        </span><span style="color: #0000ff;">var</span><span style="color: #000000;"> sTop ;
+        </span><span style="color: #0000ff;">if</span> (document.compatMode == "BackCompat"<span style="color: #000000;">)
+        {
+            sTop </span>=<span style="color: #000000;"> document.body.scrollTop;
+        }
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+        {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">document.compatMode == \"CSS1Compat\"</span>
+            sTop = document.documentElement.scrollTop == 0 ?<span style="color: #000000;"> document.body.scrollTop : document.documentElement.scrollTop;
+        }
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> sTop;
+    };
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">设置当前视口的顶端数值</span>
+    <span style="color: #0000ff;">var</span> setScrollTop = <span style="color: #0000ff;">function</span><span style="color: #000000;">(top){
+
+        </span><span style="color: #0000ff;">if</span> (document.compatMode == "BackCompat"<span style="color: #000000;">)
+        {
+            document.body.scrollTop </span>=<span style="color: #000000;"> top;
+        }
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+        {
+            </span><span style="color: #0000ff;">if</span>(document.documentElement.scrollTop == 0<span style="color: #000000;">){
+                document.body.scrollTop </span>=<span style="color: #000000;"> top;
+            }</span><span style="color: #0000ff;">else</span><span style="color: #000000;">{
+                document.documentElement.scrollTop </span>=<span style="color: #000000;"> top;
+            }
+        }
+    }
+};</span></pre>
+            </div>
+        </p>
+        <p>现在的效果如下图：</p>
+        <p><img src="image/totopshow.gif" alt="效果图"></p>
+        <p>效果展示：<a href="totopTest.html" target="_blank">点击跳转</a></p>
+        <p>原贴地址：<a href="http://www.cnblogs.com/yc-755909659/p/5988005.html" target="_blank">http://www.cnblogs.com/yc-755909659/p/5988005.html</a></p>
+        <br>
+        <br>
+        <br>
+    </div>
+    <a id="aTop" class="aTop" href="javascript:;" title="back to top" style="display: none;">
+        <img src="image/totop.png" class="imageTop">
+    </a>
+</body>
+
+</html>
