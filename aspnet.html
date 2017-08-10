@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Asp.Net 随笔</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <!-- 添加首页样式 -->
+    <script type="text/javascript" src="js/MainDefault.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+    <script type="text/javascript">
+    window.onload = function() {
+    	setBodyWidth();
+    }
+    </script>
+    <style type="text/css">
+    a:link {
+        color: #89C1FC
+    }
+    /*未被访问的颜色*/
+    
+    a:visited {
+        color: #89C1FC
+    }
+    /*访问后的颜色*/
+    
+    a:hover {
+        color: #ffffff
+    }
+    /*鼠标在链接上的颜色*/
+    
+    a:active {
+        color: #ffffff
+    }
+    /*鼠标点击链接的颜色*/
+    
+    body {
+        width: 100%;
+        min-height: 780px;
+        background-image: url(image/bg.png);
+        margin: 0px;
+    }
+    
+    #myhead {
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        left: 0px;
+        top: 0px;
+        position: absolute;
+        /*background: hsla(0,0%,100%,.3);*/
+        background-color: #ccc;
+        opacity: .3;
+    }
+
+    #mybody h3,h4{
+    	color: #89C1FC;
+    }
+   	p{
+   		color: #ffffff;
+   	}
+
+    hr {
+		border: 1px solid #ccc;
+		opacity: .3;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div id="myhead">
+        <h2 style="margin-top: 12px">Asp.Net 随笔</h2>
+    </div>
+    <div id="mybody" class="div_body bodyleft">
+        <h2 style="color:#89C1FC">Asp.Net 随笔(待详细描述)</h2>
+        <hr>
+
+		<h3>前言</h3>
+		<p>ASP.NET是一个免费的Web开发框架，是由微软在.Net Framework框架中所提供的，或者说ASP.NET是开发Web应用程序的类库，封装在system.web.dll文件中。ASP.NET并不是一种编程语言，它实际上只是一个由.NET Framework提供的一种开发平台(Development Platform)，并非编程语言。也可以认为ASP.NET是.NET组件，任何.NET语言，例如C#，可以用用该组件，创建网页或Web服务。</p>
+		<p>ASP.NET用于通过HTML、CSS、JavaScript以及服务器脚本来构建网站和Web应用程序。</p>
+		<br>
+		<h3>开发模式</h3>
+		<p>ASP.NET提供三种开发模式：Web Forms，MVC和Web Pages</p>
+		<h4>Web Forms(Web窗体)</h4>
+		<p>Web Forms是传统的ASP.NET事件驱动开发模式。添加了服务器控件、服务器事件以及服务器代码的网页。在服务器上编译和执行，并且由服务器生成html显示网页。</p>
+		<h4>MVC (Model View Controller 模型-视图-控制器)</h4>
+		<p>MVC将Web应用程序分为三种不同的组件：<br>
+			针对数据的模型(Model):模型是应用程序中用于处理应用程序数据逻辑的部分。通常模型对象在数据库中存取数据。<br>
+			针对现实的视图(View):视图是应用程序中处理数据显示的部分。通常从模型数据中创建视图。<br>
+			针对输入的控制器(Controller):控制器是应用程序中处理用户交互的部分。通常控制器从视图读取数据，控制用户输入，并向模型发送数据。
+		</p>
+		<h4>Web Pages(Web页面)</h4>
+		<P>Web Pages是最简单的ASP.NET模型，类似PHP和ASP。内置了用于数据库、视频、社交媒体等的模板和帮助器。</P>
+    </div>
+    <div class="div_click">
+        <div class="div_click_1">
+            <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+            <!-- <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script> -->
+        </div>
+    </div>
+</body>
+
+</html>
