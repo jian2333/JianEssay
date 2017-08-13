@@ -18,6 +18,9 @@ function setBodyHeight() {
     document.getElementById('mybody').style.height = needHeight + 'px';
 }
 
+/*
+ *  该方法已作废，在bodyleft样式中，采用width:calc(100% - 20px) 来处理两边间距10px 
+ */
 function setBodyWidth() {
     var mybodyWidth;
     if (window.innerWidth) {

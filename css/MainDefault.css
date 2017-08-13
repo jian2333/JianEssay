@@ -33,7 +33,7 @@
 }
 
 .bodyleft {
-    width: auto;
+    width: calc(100% - 20px);
     padding: 0px 10px;
 }
 
