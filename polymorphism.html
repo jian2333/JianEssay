@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>C#中的多态</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="" rel="stylesheet">
-<!-- 首页样式 -->
-<script type="text/javascript" src="js/MainDefault.js"></script>
-<link rel="stylesheet" type="text/css" href="css/MainDefault.css">
-<script type="text/javascript">
-window.onload = function(){
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>C#中的多态</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <!-- 首页样式 -->
+    <script type="text/javascript" src="js/MainDefault.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+    <script type="text/javascript">
+    window.onload = function() {
 
-}
-</script>
-<style type="text/css">
-	a:link{color:#3D8AE5}
-	a:visited{color: #3D8AE5}
-	a:hover{color:#3D8AE5}
-	a:active{color: #3D8AE5}
-
-	h3,h4{color: #3D8AE5}
-	p{
-		font-size: 15px;
-		text-indent: 2em
-	}
-	p span{
-		font-weight: bold;
-	}
-
-	.detail_indent{
-		margin-left: 2em;
-		line-height: 20px;
-	}
-	.detail_indent span{
-		color: #0000FF
-	}
-
-</style>
+    }
+    </script>
+    <style type="text/css">
+    a:link {
+        color: #3D8AE5
+    }
+    
+    a:visited {
+        color: #3D8AE5
+    }
+    
+    a:hover {
+        color: red
+    }
+    
+    a:active {
+        color: red
+    }
+    
+    h3,
+    h4 {
+        color: #3D8AE5
+    }
+    
+    p {
+        font-size: 15px;
+        text-indent: 2em
+    }
+    
+    p span {
+        font-weight: bold;
+    }
+    
+    .detail_indent {
+        margin-left: 2em;
+        line-height: 20px;
+    }
+    
+    .detail_indent span {
+        color: #0000FF
+    }
+    </style>
 </head>
+
 <body>
-	<div id="myhead" class="div_head">
-		<h2 style="margin-top:30px">C#中的多态</h2>
-	</div>    
-	<div id="mybody" class="div_body bodyleft">
-		<h4><a class="a_nounderline" href="http://www.cnblogs.com/jhxk/articles/1644018.html" target="_blank">[转]C#中的多态</a></h4>
-		<hr>
-		<br>
-		<p>封装、继承、多态，面向对象的三大特性，前两项理解相对容易，但要理解多态，特别是深入理解，对于初学者而言可能就会有一定困难了。我一直认为学习OO的最好方法就是实践，封装、继承在实际工作中的应用随处可见，但多态呢？也许未必，可能不经意间用到也不会把它跟"多态"这个词对应起来。在此抛砖引玉，大家讨论，个人能力有限，不足之处还请指正。</p>
-		<br>
-		<p>之前看多过类似的问题：如果面试时主考官要求你用一句话来描述多态，尽可能的精炼，你会怎么回答？当然答案有很多，每个人的理解和表达不尽相同，但我比较趋向这样描述：通过继承实现的不同对象调用相同的方法，表现出不同的行为，称之为多态。</p>
-		<br>
-		<p><span>例1：</span></p>
-		<div class="div_detail detail_indent">
-			<pre>
+    <div id="myhead" class="div_head">
+        <h2 style="margin-top:30px">C#中的多态</h2>
+    </div>
+    <div id="mybody" class="div_body bodyleft">
+        <h4><a class="a_nounderline" href="http://www.cnblogs.com/jhxk/articles/1644018.html" target="_blank">[转]C#中的多态</a></h4>
+        <hr>
+        <br>
+        <p>封装、继承、多态，面向对象的三大特性，前两项理解相对容易，但要理解多态，特别是深入理解，对于初学者而言可能就会有一定困难了。我一直认为学习OO的最好方法就是实践，封装、继承在实际工作中的应用随处可见，但多态呢？也许未必，可能不经意间用到也不会把它跟"多态"这个词对应起来。在此抛砖引玉，大家讨论，个人能力有限，不足之处还请指正。</p>
+        <br>
+        <p>之前看多过类似的问题：如果面试时主考官要求你用一句话来描述多态，尽可能的精炼，你会怎么回答？当然答案有很多，每个人的理解和表达不尽相同，但我比较趋向这样描述：通过继承实现的不同对象调用相同的方法，表现出不同的行为，称之为多态。</p>
+        <br>
+        <p><span>例1：</span></p>
+        <div class="div_detail detail_indent">
+            <pre>
 <span>public class</span> Animal
     {
         <span>public virtual void</span> Eat()
@@ -97,22 +115,21 @@ window.onload = function(){
     }
 
     		</pre>
-		</div>
-		<br>
-		<p>输出如下：</p>
-		<p>Animal eat...</p>
-		<p>Cat eat...</p>
-		<p>Dog eat...</p>
-		<br>
-		<p>在上面的例子中，通过继承，使得Animals对象数组中的不同的对象，在调用Eat()方法时，表现出了不同的行为。</p>
-		<p>多态的实现看起来很简单，要完全理解及灵活的运用C#的多态机制，也不是一件容易的事，有很多需要注意的地方。</p>
-		<br>
-
-		<h3>1.new的用法</h3>
-		<p>先看下面的例子</p>
-		<p><span>例2：</span></p>
-		<div class="div_detail detail_indent">
-			<pre>
+        </div>
+        <br>
+        <p>输出如下：</p>
+        <p>Animal eat...</p>
+        <p>Cat eat...</p>
+        <p>Dog eat...</p>
+        <br>
+        <p>在上面的例子中，通过继承，使得Animals对象数组中的不同的对象，在调用Eat()方法时，表现出了不同的行为。</p>
+        <p>多态的实现看起来很简单，要完全理解及灵活的运用C#的多态机制，也不是一件容易的事，有很多需要注意的地方。</p>
+        <br>
+        <h3>1.new的用法</h3>
+        <p>先看下面的例子</p>
+        <p><span>例2：</span></p>
+        <div class="div_detail detail_indent">
+            <pre>
 <span>public class</span> Animal
     {
         <span>public virtual void</span> Eat()
@@ -144,22 +161,21 @@ window.onload = function(){
         }
     }
 			</pre>
-		</div>
-		<p>运行结果为：</p>
-		<p>Animal eat...</p>
-		<p>Animal eat...</p>
-		<p>Cat eat...</p>
-		<br>
-		<p>可以看出，当派生类Cat的Eat()方法使用new修饰时，Cat对象转换成Animal对象后，调用的是Animal类中的Eat()方法。其实可以理解为，使用new关键字后，使得Cat中的Eat()方法和Animal中的Eat()方法称为毫不相干的两个方法，只是它们的名字碰巧相同而已。所以，Animal类中的Eat()方法不管用还是不用virtual修饰，也不管访问权限如何，或者是没有，都不会对Cat的Eat()方法产生什么影响(只是因为使用了new关键字，所以Cat类没有从Animal类继承Eat()方法，编辑器会输出警告)。</p>
-		<p>我想这是设计者有意这么设计的，因为有时候我们就是要达到这种效果。严格的说，不能说通过使用new来实现多态，只能说在默写特定的时候碰巧实现了多态的效果。</p>
-		<br>
-
-		<h3>2.override实现多态</h3>
-		<p>真正的多态使用override来实现的。回去看前面的例1，在基类Animal中将方法Eat()用virtual标记为虚方法，再在派生类Cat和Dog中用override对Eat()修饰，进行重写，很简单就实现了多态。需要注意的是，要对一个类中一个方法用override修饰，该类必须从父类继承了一个对应的用virtual修饰的虚方法，否则编译器将报错。</p>
-		<p>好像讲的差不多了，还有一个问题，不知道你想到没有。就是多层继承中又是怎样实现多态的。比如类A是基类，有一个虚方法method()(virtual修饰)，类B继承自类A，并对method()进行重写(override修饰)，现在类C又继承类B，是不是可以继续对method()进行重写，并实现多态呢？看下面的例子。</p>
-		<p><span>例3：</span></p>
-		<div class="div_detail detail_indent">
-			<pre>
+        </div>
+        <p>运行结果为：</p>
+        <p>Animal eat...</p>
+        <p>Animal eat...</p>
+        <p>Cat eat...</p>
+        <br>
+        <p>可以看出，当派生类Cat的Eat()方法使用new修饰时，Cat对象转换成Animal对象后，调用的是Animal类中的Eat()方法。其实可以理解为，使用new关键字后，使得Cat中的Eat()方法和Animal中的Eat()方法称为毫不相干的两个方法，只是它们的名字碰巧相同而已。所以，Animal类中的Eat()方法不管用还是不用virtual修饰，也不管访问权限如何，或者是没有，都不会对Cat的Eat()方法产生什么影响(只是因为使用了new关键字，所以Cat类没有从Animal类继承Eat()方法，编辑器会输出警告)。</p>
+        <p>我想这是设计者有意这么设计的，因为有时候我们就是要达到这种效果。严格的说，不能说通过使用new来实现多态，只能说在默写特定的时候碰巧实现了多态的效果。</p>
+        <br>
+        <h3>2.override实现多态</h3>
+        <p>真正的多态使用override来实现的。回去看前面的例1，在基类Animal中将方法Eat()用virtual标记为虚方法，再在派生类Cat和Dog中用override对Eat()修饰，进行重写，很简单就实现了多态。需要注意的是，要对一个类中一个方法用override修饰，该类必须从父类继承了一个对应的用virtual修饰的虚方法，否则编译器将报错。</p>
+        <p>好像讲的差不多了，还有一个问题，不知道你想到没有。就是多层继承中又是怎样实现多态的。比如类A是基类，有一个虚方法method()(virtual修饰)，类B继承自类A，并对method()进行重写(override修饰)，现在类C又继承类B，是不是可以继续对method()进行重写，并实现多态呢？看下面的例子。</p>
+        <p><span>例3：</span></p>
+        <div class="div_detail detail_indent">
+            <pre>
 <span>public class</span> Animal
     {
         <span>public virtual void</span> Eat()
@@ -201,20 +217,19 @@ window.onload = function(){
         }
     }
 			</pre>
-		</div>
-		<br>
-		<p>运行结果为：</p>
-		<p>Animal eat...</p>
-		<p>Dog eat...</p>
-		<p>WolfDog eat...</p>
-		<br>
-		<p>在上面的例子中类Dog继承自Animal，对方法Eat()进行了重写，类WolfDog有继承自Dog，再一次对方法Eat()进行了重写，并很好地书写了多态。不管继承了多少层，都可以在子类中对父类中已经重写的方法进行重写，即如果父类方法用override修饰，如果子类继承了改方法，也可以用override修饰，多彩城继承中的多态就是这样实现的。想要终止这种重写，只需重写方法时用sealed关键字进行修饰即可。</p>
-		<br>
-
-		<h3>3.abstract-override实现多态</h3>
-		<p>现在我们再来讨论一下用abstract修饰的抽象方法。抽象方法这是对方法进行了定义，而并没有实现，如果一个类包含了抽象方法，那么该类也必须用abstract声明为抽象类，一个抽象类是不能被实例化的。对于类中的抽象方法，可以在其派生类中用override进行重写，如果不重写，起派生类也要声明为抽象类。看下面的例子。</p>
-		<div class="div_detail detail_indent">
-			<pre>
+        </div>
+        <br>
+        <p>运行结果为：</p>
+        <p>Animal eat...</p>
+        <p>Dog eat...</p>
+        <p>WolfDog eat...</p>
+        <br>
+        <p>在上面的例子中类Dog继承自Animal，对方法Eat()进行了重写，类WolfDog有继承自Dog，再一次对方法Eat()进行了重写，并很好地书写了多态。不管继承了多少层，都可以在子类中对父类中已经重写的方法进行重写，即如果父类方法用override修饰，如果子类继承了改方法，也可以用override修饰，多彩城继承中的多态就是这样实现的。想要终止这种重写，只需重写方法时用sealed关键字进行修饰即可。</p>
+        <br>
+        <h3>3.abstract-override实现多态</h3>
+        <p>现在我们再来讨论一下用abstract修饰的抽象方法。抽象方法这是对方法进行了定义，而并没有实现，如果一个类包含了抽象方法，那么该类也必须用abstract声明为抽象类，一个抽象类是不能被实例化的。对于类中的抽象方法，可以在其派生类中用override进行重写，如果不重写，起派生类也要声明为抽象类。看下面的例子。</p>
+        <div class="div_detail detail_indent">
+            <pre>
 <span>public abstract class</span> Animal
     {
         <span>public abstract void</span> Eat();
@@ -261,19 +276,19 @@ window.onload = function(){
         }
     }
 			</pre>
-		</div>
-		<br>
-		<p>运行结果为：</p>
-		<p>Cat eat...</p>
-		<p>Dog eat...</p>
-		<p>WolfDog eat...</p>
-		<br>
-		<p>从上面可以看出，通过使用abstract-override可以和virtual-override一样地实现多态，包括多层继承也是一样的。不同之处在于，包含虚方法的类可以被实例化，而包含抽象方法的类不能被实例化。</p>
-		<p>以上就是我对C#中多态的一些浅薄的认识，如果错误的地方，欢迎批评指正！</p>
-		<br>
-		<br>
-		<br>
-
-	</div>
+        </div>
+        <br>
+        <p>运行结果为：</p>
+        <p>Cat eat...</p>
+        <p>Dog eat...</p>
+        <p>WolfDog eat...</p>
+        <br>
+        <p>从上面可以看出，通过使用abstract-override可以和virtual-override一样地实现多态，包括多层继承也是一样的。不同之处在于，包含虚方法的类可以被实例化，而包含抽象方法的类不能被实例化。</p>
+        <p>以上就是我对C#中多态的一些浅薄的认识，如果错误的地方，欢迎批评指正！</p>
+        <br>
+        <br>
+        <br>
+    </div>
 </body>
+
 </html>

@@ -1,150 +1,194 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>C#中数组、ArrayList和List三者的区别</title>
-<meta name="description" content="">
-<meta name="keywords" content="">
-<link href="" rel="stylesheet">
-<!-- 首页样式 -->
-<script type="text/javascript" src="js/MainDefault.js"></script>
-<link rel="stylesheet" type="text/css" href="css/MainDefault.css">
-<script type="text/javascript">
-window.onload = function(){
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>C#中数组、ArrayList和List三者的区别</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <!-- 首页样式 -->
+    <script type="text/javascript" src="js/MainDefault.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+    <script type="text/javascript">
+    window.onload = function() {
 
-}
-</script>
-<style type="text/css">
-	a:link{color: #3D8AE5}
-	a:visited{color: #3D8AE5}
-	a:hover{color: #3D8AE5}
-	a:active{color: #3D8AE5}
-
-	h3,h4{color: #3D8AE5}
-	p{
-		font-size:15px;
-		text-indent: 2em;
-	}
-	p h4{
-		font-weight: bold;
-		color: #000000;
-	}
-
-	.detail_indent{
-		width: 60%;
-		margin-left: 2em;
-		line-height: 20px;
-	}
-	.colorblue{
-		color: #0000FF
-	}
-	.colorgreen{
-		color: #008200
-	}
-	.colorgreen2{
-		color: #006699
-	}
-	.colorred{
-		color:#CC0000
-	}
-</style>
+    }
+    </script>
+    <style type="text/css">
+    a:link {
+        color: #3D8AE5
+    }
+    
+    a:visited {
+        color: #3D8AE5
+    }
+    
+    a:hover {
+        color: red
+    }
+    
+    a:active {
+        color: red
+    }
+    
+    h3,
+    h4 {
+        color: #3D8AE5
+    }
+    
+    p {
+        font-size: 15px;
+        text-indent: 2em;
+    }
+    
+    p h4 {
+        font-weight: bold;
+        color: #000000;
+    }
+    
+    .detail_indent {
+        width: 60%;
+        margin-left: 2em;
+        line-height: 20px;
+    }
+    
+    .colorblue {
+        color: #0000FF
+    }
+    
+    .colorgreen {
+        color: #008200
+    }
+    
+    .colorgreen2 {
+        color: #006699
+    }
+    
+    .colorred {
+        color: #CC0000
+    }
+    </style>
 </head>
+
 <body>
     <div id="myhead" class="div_head">
-		<h2 style="margin-top:30px">C#中的数组、ArrayList和List的区别</h2>
+        <h2 style="margin-top:30px">C#中的数组、ArrayList和List的区别</h2>
     </div>
-	<div id="mybody" class="div_body bodyleft">
-		<h4><a class="a_nounderline" href="http://blog.csdn.net/zhang_xinxiu/article/details/8657431#t1" target="_blank">[转]C#中的数组、ArrayList和List的区别</a></h4>
-		<hr>
-		<br>
-		<p>在C#中数组，ArrayList和List都能够存储一组数组，那么这三者到底有什么样的区别呢。</p>
-		<p><h4>数组</h4></p>
-		<p>数组在C#中最早出现的。在内存中连续存储的，所以它的索引速度非常快，而且赋值与修改元素也很简单。</p>
-		<div class="div_detail detail_indent">			
-&lt;span style=<span class="colorblue">&quot;font-family: Simsun;font-size: 18px;&quot;</span>&gt;<span class="colorgreen">//数组</span><br>
-<span class="colorgreen2">string</span>[] s=<span class="colorgreen2">new string</span>[2];<br>
-<br>
-<span class="colorgreen">//赋值</span><br>
-s[0]=<span class="colorblue">&quot;a&quot;</span><br>
-s[1]=<span class="colorblue">&quot;b&quot;</span><br>
-<span class="colorgreen">//修改</span><br>
-s[1]=<span class="colorblue">&quot;a1&quot;</span><br>
-&lt;/span&gt;			
-		</div>
-		<br>
-		<p>但是数组存在一些不足的地方。在数组的两个数据间插入数据是很麻烦的，而且在声明数组的时候必须制定数组的长度，数组的长度过长，会造成内存浪费，过短会造成数据溢出错误。如果在声明数组时未满不清楚数组的长度，就会变的很麻烦。</p>
-		<p>针对数组的这些确定，C#中最先提出了ArrayList对象来克服这些缺点。</p>
-
-		<p><h4>ArrayList</h4></p>
-		<p>ArrayList是命名空间System.Collections下的一部分，在使用该类时必须进行引用，同事继承了IList接口，提供了数据存储和检索。ArrayList对象的大小是按照其中存储的数据来动态扩充与收缩的。所以，在声明ArrayList对象时并不需要指定它的长度。</p>
-		<div class="div_detail detail_indent">
-&lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;<span class="colorgreen">//ArrayList</span><br>
-ArrayList list = <span class="colorgreen2">new</span> ArrayList();<br>
-<br>
-<span class="colorgreen">//新增数据</span><br>
-lsit.Add(<span class="colorblue">&quot;cde&quot;</span>);<br>
-list.Add(5678);<br>
-<br>
-<span class="colorgreen">//修改数据</span><br>
-list[2] = 34;<br>
-<br>
-<span class="colorgreen">//移除数据</span><br>
-list.RemoveAt(0);<br>
-<br>
-<span class="colorgreen">//插入数据</span><br>
-list.Insert(0,<span class="colorblue">&quot;qwe&quot;</span>)<br>
-&lt;/span&gt;
-		</div>
-		<p>从上面的例子看，ArrayList好像是解决了数组中所有的缺点，为什么又会有List呢？</p>
-		<p>我们从上面的例子看，在List中，我们不仅插入了字符串cde，而且插入了数字5678。这样在ArrayList中插入了不同类型的数据是允许的。因为ArrayList会把所有插入其中的数据都当做object类型来处理，在我们使用ArrayList处理数据时，很可能会报类型不匹配的错误，也就是ArrayList不是类型安全的。在存储或者检索值类型时通常发生装箱和拆箱操作，带来很大的性能耗损。</p>
-		<p>装箱与拆箱的概念：</p>
-		<p>简单的说：</p>
-		<p><span class="colorred">装箱：就是将值类型转换成引用类型</span></p>
-		<p>比如将int类型的值123赋给object对象obj</p>
-		<div class="div_detail detail_indent">
-&lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;<br>
-&emsp;&emsp;int i = 123;<br>
-&emsp;&emsp;<span class="colorgreen2">object</span> obj=(<span class="colorgreen2">object</span>)i;<br>
-&lt;/span&gt;
-		</div>
-		<p><span class="colorred">拆箱：就是引用类型转换为值类型</span></p>
-		<p>比如将object对象obj的值赋给int类型的变量i</p>
-		<div class="div_detail detail_indent">
-&lt;span style=<span>&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;<br>
-&emsp;&emsp;<span class="colorgreen2">object</span> obj = "abc";<br>
-&emsp;&emsp;<span class="colorgreen2">int</span> i = (<span class="colorgreen2">string</span>)obj;<br>
-&lt;/span&gt;
-		</div>
-		<br>
-		<p><span class="colorred">装箱和拆箱的过程是很损耗性能的。</span></p>
-
-		<p><h4>泛型List</h4></p>
-		<p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以出现了泛型的概念。List类似ArrayList类的泛型等效类，它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。<span class="colorred">最关键的区别在于，在声明List集合时，我们同时需要为其舍命List集合内数据的对象类型。</span></p>
-		<p>比如：</p>
-		<div class="div_detail detail_indent">
-&lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;<br>
-List&lt;<span class="colorgreen2">string</span>&gt; list = <span class="colorgreen2">new</span> List&lt;<span class="colorgreen2">string</span>&gt;();<br>
-<br>
-<span class="colorgreen">//新增数据</span><br>
-list.Add(&quot;abc&quot;);<br>
-<br>
-<span class="colorgreen">//修改数据</span><br>
-list[0] = &quot;def&quot;<br>
-<br>
-<span class="colorgreen">//移除数据</span><br>
-list.RemoveAt(0);<br>
-&lt;/span&gt;
-		</div>
-		<br>
-		<p>上例中，如果我们往List集合中插入int数组123，IDE就会报错，且不能通过编译。这样就避免前面讲的类型安全和装箱拆箱的性能问题了。</p>
-		<p><h4>总结：</h4></p>
-		<p>数组的容量是固定的，您只能一次获取或者设置一个元素的值，而ArrayList或List&lt;T&gt;的容量可根据需要自动扩充、修改、删除或者插入数据。</p>
-		<p>数组可以具有多个维度，而ArrayList或List&lt;T&gt;始终只有一个维度。但是，您可以轻松创建数组列表或列表的列表。特定类型(Object除外)的数组的性能优于ArrayList。这是因为ArrayList的元素属于Object类型，所以在存储或者检索值类型时通常发生装箱和拆箱操作。不过，在不需要重新分配时(即最初的容量十分接近列表的最大容量)，List&lt;T&gt;的性能与同类型的数组十分接近。</p>
-		<p>在决定使用List&lt;T&gt;还是使用ArrayList类(两者具有类似的功能)时，记住List&lt;T&gt;类在大多数情况下执行得更好并且是类型安全的。如果对List&lt;T&gt;类的类型T使用引用类型，则两个类的行为是完全相同的。但是，如果对类型T试用值类型，则需要考虑实现和装箱问题。</p>
-		<br>
-		<br>
-		<br>
-	</div>    
+    <div id="mybody" class="div_body bodyleft">
+        <h4><a class="a_nounderline" href="http://blog.csdn.net/zhang_xinxiu/article/details/8657431#t1" target="_blank">[转]C#中的数组、ArrayList和List的区别</a></h4>
+        <hr>
+        <br>
+        <p>在C#中数组，ArrayList和List都能够存储一组数组，那么这三者到底有什么样的区别呢。</p>
+        <p>
+            <h4>数组</h4></p>
+        <p>数组在C#中最早出现的。在内存中连续存储的，所以它的索引速度非常快，而且赋值与修改元素也很简单。</p>
+        <div class="div_detail detail_indent">
+            &lt;span style=<span class="colorblue">&quot;font-family: Simsun;font-size: 18px;&quot;</span>&gt;<span class="colorgreen">//数组</span>
+            <br>
+            <span class="colorgreen2">string</span>[] s=<span class="colorgreen2">new string</span>[2];
+            <br>
+            <br>
+            <span class="colorgreen">//赋值</span>
+            <br> s[0]=
+            <span class="colorblue">&quot;a&quot;</span>
+            <br> s[1]=
+            <span class="colorblue">&quot;b&quot;</span>
+            <br>
+            <span class="colorgreen">//修改</span>
+            <br> s[1]=
+            <span class="colorblue">&quot;a1&quot;</span>
+            <br> &lt;/span&gt;
+        </div>
+        <br>
+        <p>但是数组存在一些不足的地方。在数组的两个数据间插入数据是很麻烦的，而且在声明数组的时候必须制定数组的长度，数组的长度过长，会造成内存浪费，过短会造成数据溢出错误。如果在声明数组时未满不清楚数组的长度，就会变的很麻烦。</p>
+        <p>针对数组的这些确定，C#中最先提出了ArrayList对象来克服这些缺点。</p>
+        <p>
+            <h4>ArrayList</h4></p>
+        <p>ArrayList是命名空间System.Collections下的一部分，在使用该类时必须进行引用，同事继承了IList接口，提供了数据存储和检索。ArrayList对象的大小是按照其中存储的数据来动态扩充与收缩的。所以，在声明ArrayList对象时并不需要指定它的长度。</p>
+        <div class="div_detail detail_indent">
+            &lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;<span class="colorgreen">//ArrayList</span>
+            <br> ArrayList list = <span class="colorgreen2">new</span> ArrayList();
+            <br>
+            <br>
+            <span class="colorgreen">//新增数据</span>
+            <br> lsit.Add(
+            <span class="colorblue">&quot;cde&quot;</span>);
+            <br> list.Add(5678);
+            <br>
+            <br>
+            <span class="colorgreen">//修改数据</span>
+            <br> list[2] = 34;
+            <br>
+            <br>
+            <span class="colorgreen">//移除数据</span>
+            <br> list.RemoveAt(0);
+            <br>
+            <br>
+            <span class="colorgreen">//插入数据</span>
+            <br> list.Insert(0,
+            <span class="colorblue">&quot;qwe&quot;</span>)
+            <br> &lt;/span&gt;
+        </div>
+        <p>从上面的例子看，ArrayList好像是解决了数组中所有的缺点，为什么又会有List呢？</p>
+        <p>我们从上面的例子看，在List中，我们不仅插入了字符串cde，而且插入了数字5678。这样在ArrayList中插入了不同类型的数据是允许的。因为ArrayList会把所有插入其中的数据都当做object类型来处理，在我们使用ArrayList处理数据时，很可能会报类型不匹配的错误，也就是ArrayList不是类型安全的。在存储或者检索值类型时通常发生装箱和拆箱操作，带来很大的性能耗损。</p>
+        <p>装箱与拆箱的概念：</p>
+        <p>简单的说：</p>
+        <p><span class="colorred">装箱：就是将值类型转换成引用类型</span></p>
+        <p>比如将int类型的值123赋给object对象obj</p>
+        <div class="div_detail detail_indent">
+            &lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;
+            <br> &emsp;&emsp;int i = 123;
+            <br> &emsp;&emsp;
+            <span class="colorgreen2">object</span> obj=(<span class="colorgreen2">object</span>)i;
+            <br> &lt;/span&gt;
+        </div>
+        <p><span class="colorred">拆箱：就是引用类型转换为值类型</span></p>
+        <p>比如将object对象obj的值赋给int类型的变量i</p>
+        <div class="div_detail detail_indent">
+            &lt;span style=<span>&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;
+            <br> &emsp;&emsp;
+            <span class="colorgreen2">object</span> obj = "abc";
+            <br> &emsp;&emsp;
+            <span class="colorgreen2">int</span> i = (<span class="colorgreen2">string</span>)obj;
+            <br> &lt;/span&gt;
+        </div>
+        <br>
+        <p><span class="colorred">装箱和拆箱的过程是很损耗性能的。</span></p>
+        <p>
+            <h4>泛型List</h4></p>
+        <p>因为ArrayList存在不安全类型与装箱拆箱的缺点，所以出现了泛型的概念。List类似ArrayList类的泛型等效类，它的大部分用法都与ArrayList相似，因为List类也继承了IList接口。<span class="colorred">最关键的区别在于，在声明List集合时，我们同时需要为其舍命List集合内数据的对象类型。</span></p>
+        <p>比如：</p>
+        <div class="div_detail detail_indent">
+            &lt;span style=<span class="colorblue">&quot;font-family:SimSun;font-size:18px;&quot;</span>&gt;
+            <br> List&lt;
+            <span class="colorgreen2">string</span>&gt; list = <span class="colorgreen2">new</span> List&lt;<span class="colorgreen2">string</span>&gt;();
+            <br>
+            <br>
+            <span class="colorgreen">//新增数据</span>
+            <br> list.Add(&quot;abc&quot;);
+            <br>
+            <br>
+            <span class="colorgreen">//修改数据</span>
+            <br> list[0] = &quot;def&quot;
+            <br>
+            <br>
+            <span class="colorgreen">//移除数据</span>
+            <br> list.RemoveAt(0);
+            <br> &lt;/span&gt;
+        </div>
+        <br>
+        <p>上例中，如果我们往List集合中插入int数组123，IDE就会报错，且不能通过编译。这样就避免前面讲的类型安全和装箱拆箱的性能问题了。</p>
+        <p>
+            <h4>总结：</h4></p>
+        <p>数组的容量是固定的，您只能一次获取或者设置一个元素的值，而ArrayList或List&lt;T&gt;的容量可根据需要自动扩充、修改、删除或者插入数据。</p>
+        <p>数组可以具有多个维度，而ArrayList或List&lt;T&gt;始终只有一个维度。但是，您可以轻松创建数组列表或列表的列表。特定类型(Object除外)的数组的性能优于ArrayList。这是因为ArrayList的元素属于Object类型，所以在存储或者检索值类型时通常发生装箱和拆箱操作。不过，在不需要重新分配时(即最初的容量十分接近列表的最大容量)，List&lt;T&gt;的性能与同类型的数组十分接近。</p>
+        <p>在决定使用List&lt;T&gt;还是使用ArrayList类(两者具有类似的功能)时，记住List&lt;T&gt;类在大多数情况下执行得更好并且是类型安全的。如果对List&lt;T&gt;类的类型T使用引用类型，则两个类的行为是完全相同的。但是，如果对类型T试用值类型，则需要考虑实现和装箱问题。</p>
+        <br>
+        <br>
+        <br>
+    </div>
 </body>
+
 </html>
