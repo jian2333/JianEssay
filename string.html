@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>c#中的string、stringbuffer和stringbuilder</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<!-- 首页样式 -->
+<script type="text/javascript" src="js/MainDefault.js"></script>
+<link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+<script type="text/javascript">
+window.onload = function(){
+
+}
+</script>
+<style type="text/css">
+	a:link{color: #3D8AE5}
+	a:visited{color: #3D8AE5}
+	a:hover{
+		color: red;
+		text-decoration: underline;
+	}
+	a:active{color: red}
+
+	h4{color: #3D8AE5}
+
+	p{
+		width: 80%;
+		font-size: 15px;
+		text-indent: 2em;
+	}
+
+	.noindent{
+		text-indent: 0em;
+	}
+
+	.colorblue{color:blue}
+</style>
+</head>
+<body>
+    <div id="myhead" class="div_head">
+		<h2 style="margin-top: 30px">c#中的string、stringbuffer和stringbuilder</h2>
+    </div>
+    <div id="mybody" class="div_body bodyleft">
+		<h4>c#中的string、stringbuffer和stringbuilder</h4>
+		<hr>
+		<br>
+		<p class="noindent">1.首页从运行速度上来说是<span class="colorblue">stringbuilder&gt;stringbuffer&gt;string</span></p>
+		<p class="noindent">2.从类型上来说：</p>
+		<p>string，<span class="colorblue">是字符串常量</span>，也就是说是不可改变的，创建之后的每次修改都是生成新的对象。例如：string a = "abc" + "ddd";a += "ee";system.out.println(a);这里输出的字符串a已经不是一开始声明的字符串对象了，而是系统另外创建的对象，由于这种机制，实际上每次对string对象进行操作都会不断创建新的对象，直接影响系统效率。</p>
+		<p>stringbuffer和stringbuilder，<span class="colorblue"> 都是字符串变量</span>，可以扩充其封装的字符串字符的数量，也可定义它的容量，当存储容量达到定义容量时，会自动扩充容量;两者最大的区别在于：<span class="colorblue">stringbuffer是线程安全的，支持并发操作</span>，适合在多线程中使用；而<span class="colorblue">stringbuilder不支持并发，线程也不安全</span>，适合单线程使用。</p>
+		<p class="noindent">3.stringbuilder类提供的一些常用方法：StringBuilder builder = new StringBuilder();</p>
+		<p>Append()方法，该方法追加内容到StringBuffer对象的末尾，类似于字符串的连接。调用该方法以后，StringBuffer对象的内容也发生改变。用法：创建的对象builder.Append("字符串")，直接调用。</p>
+		<p>AppendFormat()方法，和Append()方法功能差不多，区别在于它可以将字符转换为指定格式封装到stringbuilder对象中。用法：builder.AppendFormat("{0:C},"字符串")，{0:C}表示以货币形式。</p>
+		<p>insert()方法，向指定索引处插入指定字符。用法：builder.insert(5,"字符串")。</p>
+		<p>reverse()方法，内容反转。用法：直接调用。</p>
+		<p>trimToSize()方法，当builder对象的空间大于其封装的字符串时，可以调用该函数将其长度缩小到封装的字符串大小，节省空间。用法，直接调用。</p>
+		<br>
+		<br>
+		<br>
+    </div>
+</body>
+</html>
