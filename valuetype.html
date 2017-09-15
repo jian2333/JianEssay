@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>c#中的值类型和引用类型，==和equals，GetHashCode的区别和使用</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <!-- 首页样式 -->
+    <script type="text/javascript" src="js/MainDefault.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/MainDefault.css">
+    <script type="text/javascript">
+    window.onload = function() {
+
+    }
+    </script>
+    <style type="text/css">
+		a:link{color: #3D8AE5}
+		a:visited{color:#3D8AE5}
+		a:hover{color:red;text-decoration: underline}
+		a:active{color:red}
+
+		h4{color:#3D8AE5}
+
+		p,ol,.fontmin{
+			font-size: 14px;
+		}
+		
+		ul{padding-left: 0px;}		
+		.licontrol ul{list-style-type:none;}
+		.licontrol ol{list-style-type:"1";}
+		
+		.indent2{
+			text-indent: 2em;
+		}
+		.fontbold{
+			font-weight: bold;
+		}
+
+    </style>
+</head>
+
+<body>
+	<div id="myhead" class="div_head">
+		<h2 style="margin-top: 30px">c#中的值类型和引用类型，==和equals，GetHashCode的区别和使用</h2>
+	</div>
+	<div id="mybody" class="div_body bodyleft">
+		<h4>c#中的值类型和引用类型，==和equals，GetHashCode的区别和使用</h4>
+		<hr>
+		<h4>1.值类型和引用类型</h4>
+		<div>
+		<ol class="licontrol">
+			<li>
+				<ul>
+					<li>值类型&emsp;：基本存储在栈中，也可能存在堆中。栈内存放的是具体的值(内容)。</li>
+					<li>引用类型：总是存在堆中，堆的内容的地址存放在栈中。</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>值类型&emsp;：不能包含null。</li>
+					<li>引用类型：可以包含null。</li>
+				</ul>
+			</li>
+			<li>
+				<ul>
+					<li>值类型包括&emsp;：</li>
+					<li>
+						<ol>
+							<li>基本类型</li>
+							<li>结构体struct</li>
+							<li>枚举enum</li>
+						</ol>
+					</li>
+					<li>引用类型包括：</li>
+					<li>
+						<ol>
+							<li>类class</li>
+							<li>委托delegate</li>
+							<li>数组array</li>
+							<li>接口interface</li>
+							<li>Object和string</li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+		</ol>
+		<img style="margin-left:2em" src="image/valuetype/vt1.png">
+		</div>
+		<br>
+		<h4>2.==和equals的区别</h4>
+		<div class="fontmin">
+			<ol>
+				<li>==比较的是地址，是栈内的值；equals比较的是(对象的)内容，是堆内的值。</li>
+				<li>对值类型：值类型存储在栈内，故用==是直接判断其值是否相等。因为值类型不存在堆中的数据，因此值类型的equals也是判断数据。即，对值类型而言，==与equals相同，都是判断其值是否相等。</li>
+				<li>对引用类型：其中栈存储的是对象的地址，那么==就是比较两个地址是否相等，即是否指向同一个对象。equals函数则是比较两个对象在堆中的数据是否一样，即两个引用类型是否是对同一个对象的引用。</li>
+			</ol>
+			<div style="margin-left: 2em;text-indent: 0em;line-height: 22px" >
+				<span class="fontbold">PS:String类型特殊</span><br>
+				String类型虽然是引用类型，但是对String对象的赋值却按着值类型来操作。<br>
+				例：<br>
+				String s1 = &quot;hello&quot;;<br>
+				String s2 = &quot;hello&quot;;<br>
+				对s2初始化的时候，并没有重新开辟内存，而是直接将其地址指向s1的内容&quot;hello&quot;。这样一来，string类型虽然是引用类型，但是其==操作和equals操作都是一样的，均比较值是否相等。
+			</div>
+		</div>
+		<br>
+		<h4>3.GetHashCode</h4>
+		<ol>
+			<li>若两对象equals相等，那么其GetHashCode()必然相等。但是反过来，如果其GetHashCode()相等，那么这两个对象的equals方法比较结果不一定相同。（为了获得最佳性能，hash函数为对象内容生成的数字是随机的，这就意味着，内容不同的对象，有可能生成的数字是一样的，但可以认为这种概率非常小）</li>
+			<li>GetHashCode函数是用来判断相等的。</li>
+			<li>对于值类型：相等就相等；对于引用类型：如果GetHashCode()不相同，则两个值一定不相同，如果GetHashCode()相同，则继续用equals判断两个值是否相同。</li>
+		</ol>
+		<br>
+		<br>
+		<br>
+	</div>
+</body>
+
+</html>
