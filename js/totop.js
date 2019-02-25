@@ -30,7 +30,7 @@ window.onload = function() {
 
             if (backTop == 0) {
                 //结束执行函数
-                console.log('backTop==0:' + backTop);
+                //console.log('backTop==0:' + backTop);
                 clearInterval(timer);
             }
         }, 30);
@@ -57,7 +57,7 @@ window.onload = function() {
             if (document.documentElement.scrollTop == 0) {
                 document.body.scrollTop = top;
             } else {
-                document.doucmentElement.scrolltop = top;
+                document.documentElement.scrollTop = top;
             }
         }
     }
