@@ -1,0 +1,30 @@
+{
+  "name": "jianessay",
+  "version": "1.0.0",
+  "description": "jian essay",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "imageinfo": "^1.0.4",
+    "jquery": "^3.3.1",
+    "jsdom": "^14.0.0",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jian2333/JianEssay.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jian2333/JianEssay/issues"
+  },
+  "homepage": "https://github.com/Jian2333/JianEssay#readme"
+}

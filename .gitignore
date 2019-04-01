@@ -3,3 +3,6 @@ essaydemo
 # WebStrom
 
 .idea
+
+# npm
+.node_modules
