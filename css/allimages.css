@@ -6,10 +6,9 @@ body {
     background-size: contain;
 }
 
-#ulImgs ul {
+#ulImgs {
     margin: 0;
-    padding: 0;
-
+    padding-left: 0;
 }
 
 #ulImgs li {
@@ -46,13 +45,22 @@ body {
     height: 2em;
 }
 
-@media only screen and (min-width: 400px) {
+.container .col-md-8 {
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
     .container .col-md-8 {
         float: right;
     }
+
     .container .col-md-4 {
         float: left;
         max-height: 570px;
         overflow-y: auto;
+    }
+
+    #ulImgs {
+        padding-left: 20px;
     }
 }
