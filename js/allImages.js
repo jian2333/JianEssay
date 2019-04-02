@@ -4,6 +4,7 @@
  * issues:
  * 1. 链接多次hover时有延迟，
  * 2. 链接多次hover时，.carousel('pause')会失效，轮播图会继续 自动播放！
+ * 3. nodejs 服务器尚未部署，所以$.ajax暂时只有本地环境有效！
  */
 
 // common function
@@ -47,6 +48,11 @@ function getImages() {
             // console.log(result);
             initLinks(result);
             initImgs(result);
+        }, error: function (resp) {
+            console.log("error:" + JSON.stringify(resp));
+            var images = ['mengmeizi1.jpg','mengmeizi2.jpg','mengmeizi3.jpg','mengmeizi4.jpg','mengmeizi5.jpg','mengmeizi6.jpg'];
+            initLinks(images);
+            initImgs(images);
         }
     });
 }

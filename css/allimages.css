@@ -42,7 +42,17 @@ body {
     color: #f8f8f8;
     text-align: center;
     font-size: 2em;
-    /*border: 1px solid green;*/
     padding: .5em 0;
     height: 2em;
+}
+
+@media only screen and (min-width: 400px) {
+    .container .col-md-8 {
+        float: right;
+    }
+    .container .col-md-4 {
+        float: left;
+        max-height: 570px;
+        overflow-y: auto;
+    }
 }
