@@ -77,10 +77,10 @@ app.get('/getmdimages', function (req, res) {
 
 //server启动时
 var server = app.listen(8081, function () {
-    // var host = server.address().address;
-    // var port = server.address().port;
-    //
-    // console.log("实例启动：访问地址为 http://%s:%s", host, port);
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log("实例启动：访问地址为 http://%s:%s", host, port);
 });
 
 
