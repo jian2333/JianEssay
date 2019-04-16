@@ -1,0 +1,780 @@
+
+	    <html>
+	      <head>
+				  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	        <title>myjquery</title>
+					
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+			
+				  <style>
+					pre {
+					    counter-reset: line-numbering;
+					    border: solid 1px #d9d9d9;
+					    border-radius: 0;
+					    background: #fff;
+					    padding: 0;
+					    line-height: 23px;
+					    margin-bottom: 30px;
+					    white-space: pre;
+					    overflow-x: auto;
+					    word-break: inherit;
+					    word-wrap: inherit;
+					}
+
+					pre a::before {
+					  content: counter(line-numbering);
+					  counter-increment: line-numbering;
+					  padding-right: 1em; /* space after numbers */
+					  width: 25px;
+					  text-align: right;
+					  opacity: 0.7;
+					  display: inline-block;
+					  color: #aaa;
+					  background: #eee;
+					  margin-right: 16px;
+					  padding: 2px 10px;
+					  font-size: 13px;
+					  -webkit-touch-callout: none;
+					  -webkit-user-select: none;
+					  -khtml-user-select: none;
+					  -moz-user-select: none;
+					  -ms-user-select: none;
+					  user-select: none;
+					}
+
+					pre a:first-of-type::before {
+					  padding-top: 10px;
+					}
+
+					pre a:last-of-type::before {
+					  padding-bottom: 10px;
+					}
+
+					pre a:only-of-type::before {
+					  padding: 10px;
+					}
+			
+					.highlight { background-color: #ffffcc } /* RIGHT */
+					</style>
+	      </head>
+	      <body>
+				  <div>
+							<div style='width:25%;'>
+									<ul id="tree" class="ztree" style='width:100%'>
+		
+									</ul>
+							</div>
+			        <div id='readme' style='width:70%;margin-left:20%;'>
+			          	<article class='markdown-body'>
+			            	<style>.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f0f0f0; }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #60a0b0; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .cpf { color: #60a0b0; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sa { color: #4070a0 } /* Literal.String.Affix */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .dl { color: #4070a0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #06287e } /* Name.Function.Magic */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .vm { color: #bb60d5 } /* Name.Variable.Magic */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+<h2><a href="https://www.w3cschool.cn/jquery/rdl9cfnk.html" title="JQuery 教程">JQuery 教程</a></h2>
+
+<p><a href="http://www.jianwill.cn/md/inlist/myjquery.html"><strong>查看目录版</strong></a></p>
+
+<p><a href="http://www.jianwill.cn/md/myJquery_2019-3-25.html"><strong>查看原版</strong></a></p>
+
+<p><strong>jQuery</strong> 是一个 <strong>JavaScript</strong> 库。</p>
+
+<h3>jQuery 安装</h3>
+
+<p>有两种安装方法：</p>
+
+<ul>
+<li>从 <strong><a href="https://jquery.com/download/" title="jquery">jquery</a></strong> 下载 <strong>jQuery</strong> 库；</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;jquery-1.10.2.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>从 <strong>CDN</strong> 中载入 <strong>jQuery</strong> ，如从 <strong>Google</strong> 中加载 <strong>jQuery</strong> ；</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      // 百度 CDN
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://libs.baidu.com/jquery/1.10.2/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+      // 又拍云 CDN
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+      // 新浪 CDN
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+      // Google CDN (国内可能被墙)
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+      // Microsoft CDN
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://ajax.htmlnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+<h3>jQuery 语法</h3>
+
+<ul>
+<li><code>js
+//    $(selector).action();
+$(this).hide();
+</code></li>
+</ul>
+
+<ul>
+<li>文档加载完事件的两种写法：</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// 开始写 jQuery 代码...</span>
+  <span class="p">})</span>
+</pre></div><div class="highlight"><pre><span></span>  <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// 开始写 jQuery 代码...</span>
+  <span class="p">});</span>
+</pre></div>
+<h3>jQuery 选择器</h3>
+
+<ul>
+<li><p>类似 <strong>JavaScript</strong> ；</p></li>
+<li><p>主要有 <strong>元素选择器</strong> ， <strong>#Id选择器</strong> ， <strong>.class选择器</strong> ， <strong>CSS选择器</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#test&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.test&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;background-color&quot;</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 事件</h3>
+
+<table><thead>
+<tr>
+<th>鼠标事件</th>
+<th>键盘事件</th>
+<th>表单事件</th>
+<th>文档/窗口事件</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>click</td>
+<td>key*<em>press</em>*</td>
+<td>submit</td>
+<td>load</td>
+</tr>
+<tr>
+<td>dbclick</td>
+<td>key*<em>down</em>*</td>
+<td>change</td>
+<td>resize (浏览器窗口大小调整时触发)</td>
+</tr>
+<tr>
+<td>hover</td>
+<td>key*<em>up</em>*</td>
+<td>focus</td>
+<td>scroll (滚动时触发)</td>
+</tr>
+<tr>
+<td>mouse*<em>enter</em>*</td>
+<td></td>
+<td>blur</td>
+<td>unload (离开页面时触发，jQuery1.8中 <strong>废弃</strong>)</td>
+</tr>
+<tr>
+<td>mouse*<em>leave</em>*</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h4>比较 keypress，keydown，keyup</h4>
+
+<ul>
+<li><strong>keydown</strong> ： 键盘 <strong>按下</strong> 时触发，一直按着则会 <strong>不断触发</strong> ，返回的是 <strong>键盘代码</strong> ；</li>
+<li><strong>keypress</strong> ： 键盘 <strong>按下并产生一个字符</strong> 时触发，一直按着会 <strong>不断触发</strong> ， 返回 <strong>ASCII码</strong> ， <strong>shift</strong>、<strong>alt</strong>、<strong>ctrl</strong> 不产生字符所以不会触发；</li>
+<li><strong>keyup</strong> ： 键盘 <strong>松开</strong> 时触发，与 <strong>keydown</strong> 对应，返回 <strong>键盘代码</strong> ； </li>
+</ul>
+
+<h2>jQuery 效果</h2>
+
+<p>所有效果都类似，分 <strong>正</strong> ， <strong>反</strong> ， <strong>正反切换 toggle</strong> ，<strong>回调函数也类似</strong> 。</p>
+
+<h3>jQuery 效果 - 隐藏和显示</h3>
+
+<ul>
+<li><code>js
+$(selector).hide(speed,callback);         // 隐藏
+$(selector).show(speed,callback);         // 显示
+$(selector).toggle(seppd,callback);           // 自动切换隐藏和显示
+</code></li>
+</ul>
+
+<ul>
+<li><p><strong>speed</strong> ： 规定速度，可以取值 &quot;slow&quot;，&quot;fast&quot; 或 <strong>毫秒</strong> ；</p></li>
+<li><p><strong>callback</strong> ： <strong>jQuery</strong> 效果完成后执行的函数：</p>
+
+<ul>
+<li><strong>$(selector)</strong> 选中的个数为n个，则 <strong>callback</strong> 函数会执行n次；</li>
+<li><strong>callback</strong> 函数名后加括号，会立刻执行函数体， <strong>jQuery</strong> 效果完成后 <strong>不会</strong> 再执行函数体；</li>
+<li><strong>callback</strong> 可以死函数名，也可以是匿名函数；</li>
+</ul></li>
+</ul>
+
+<h3>jQuery 效果 - 淡入淡出</h3>
+
+<ul>
+<li><code>js
+$(selector).fadeIn(speed,callback);           // 淡入已隐藏的元素
+$(selector).fadeOut(speed,callback);      // 淡出可见元素，淡出后不占位置
+$(selector).fadeToggle(speed,callback);       // 在淡入和淡出间自动切换
+$(selector).fadeTo(speed,opacity,callback);   // 渐变为指定的 不透明度 (值介于0与1之间)
+</code></li>
+</ul>
+
+<ul>
+<li><p><strong>speed</strong> 和 <strong>callback</strong> ：和 <strong>隐藏和显示</strong> 中的参数一样；</p></li>
+<li><p><strong>opacity</strong> ： 不透明度，0 &lt;= x &lt;= 1 ；</p></li>
+</ul>
+
+<h3>jQuery 效果 - 滑动</h3>
+
+<ul>
+<li><p>可使元素 <strong>上下滑动</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span><span class="nx">callback</span><span class="p">);</span>        <span class="c1">// 向下滑动元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span><span class="nx">callback</span><span class="p">);</span>      <span class="c1">// 向上滑动元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">(</span><span class="nx">speed</span><span class="p">,</span><span class="nx">callback</span><span class="p">);</span>  <span class="c1">// 在向上滑和向下滑之间自动切换</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><strong>speed</strong> 和 <strong>callback</strong> ： 和 <strong>隐藏和显示</strong> 中的参数一样；</li>
+</ul>
+
+<h3>jQuery 效果 - 动画</h3>
+
+<ul>
+<li><p>使用 <strong>jQury animate()</strong> 方法自定义动画；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span><span class="nx">params</span><span class="p">},</span><span class="nx">speed</span><span class="p">,</span><span class="nx">callback</span><span class="p">);</span> <span class="c1">// 创建自定义动画</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p><strong>params</strong> ： 必选，形成的动画的 <strong>CSS</strong> 属性；</p></li>
+<li><p><strong>speed</strong> 和 <strong>callback</strong> ： 和 <strong>隐藏和显示</strong> 中的参数一样；</p></li>
+</ul>
+
+<h4>jQuery animate() - 操作多个属性</h4>
+
+<ul>
+<li><p>可同时使用多个属性；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+  <span class="nx">left</span><span class="o">:</span><span class="s1">&#39;250px&#39;</span><span class="p">,</span>
+  <span class="nx">opacity</span><span class="o">:</span><span class="s1">&#39;0.5&#39;</span><span class="p">,</span>
+  <span class="nx">height</span><span class="o">:</span><span class="s1">&#39;150px&#39;</span><span class="p">,</span>
+  <span class="nx">width</span><span class="o">:</span><span class="s1">&#39;150px&#39;</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p><strong>CSS</strong> 属性需要使用 <strong>Camel</strong> 标记法书写：比如使用 <strong>paddingLeft</strong> 而不是 <em>padding-left</em> ，使用 <strong>marginRight</strong> 而不是 <em>margin-right</em> ，等等；</p></li>
+<li><p>要生成 <strong>颜色动画</strong> ，需要从 <a href="https://jquery.com/download/" title="jquery.com">jquery.com</a> 下载 <a href="https://plugins.jquery.com/color/" title="Color Animations">Color Animations</a> 插件；</p></li>
+</ul>
+
+<h4>jQuery animate() - 使用相对值</h4>
+
+<ul>
+<li><p>可以定义相对值(该值相对于元素的当前值)。需要在值的前面加上 <strong>+=</strong> 或 <strong>-=</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+  <span class="nx">left</span><span class="o">:</span><span class="s1">&#39;250px&#39;</span><span class="p">,</span>
+  <span class="nx">height</span><span class="o">:</span><span class="s1">&#39;+=150px&#39;</span><span class="p">,</span>
+  <span class="nx">width</span><span class="o">:</span><span class="s1">&#39;+=150px&#39;</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h4>jQuery animate() - 使用预定义值</h4>
+
+<ul>
+<li><p>可以把属性的动画值设置为 <strong>show</strong>、<strong>hide</strong> 或 <strong>toggle</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">({</span>
+  <span class="nx">height</span><span class="o">:</span><span class="s1">&#39;toggle&#39;</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h4>jQuery animate() - 使用队列功能</h4>
+
+<ul>
+<li><p>如果编写多个 <strong>animate()</strong> 调用， <strong>jQuery</strong> 会创建包含这些方法调用的&quot;内部&quot;队列，然后逐一运行这些 <strong>animate</strong> 调用；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">height</span><span class="o">:</span><span class="s1">&#39;300px&#39;</span><span class="p">,</span><span class="nx">opacity</span><span class="o">:</span><span class="s1">&#39;0.4&#39;</span><span class="p">},</span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">width</span><span class="o">:</span><span class="s1">&#39;300px&#39;</span><span class="p">,</span><span class="nx">opacity</span><span class="o">:</span><span class="s1">&#39;0.8&#39;</span><span class="p">},</span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">height</span><span class="o">:</span><span class="s1">&#39;100px&#39;</span><span class="p">,</span><span class="nx">opacity</span><span class="o">:</span><span class="s1">&#39;0.4&#39;</span><span class="p">},</span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+  <span class="nx">div</span><span class="p">.</span><span class="nx">animate</span><span class="p">({</span><span class="nx">height</span><span class="o">:</span><span class="s1">&#39;100px&#39;</span><span class="p">,</span><span class="nx">opacity</span><span class="o">:</span><span class="s1">&#39;0.8&#39;</span><span class="p">},</span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 效果 - 停止动画</h3>
+
+<ul>
+<li><p>使用 <strong>stop</strong> 方法来停止动画或效果；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">stop</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">stop</span><span class="p">(</span><span class="nx">stopAll</span><span class="p">,</span><span class="nx">goToEnd</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p><strong>stopAll</strong> ： false，仅停止当前活动的动画；true，停止整个队列中的动画；默认 false；</p></li>
+<li><p><strong>goToEnd</strong> ： 是否立即完成当前动画，默认 false；</p></li>
+<li><p>所以：</p>
+
+<ul>
+<li><strong>stop()</strong> ： 停止元素当前活动的动画，队列后续的动画继续执行；</li>
+<li><strong>stop(true)</strong> ： 停止元素所有的动画，并清除动画队列；</li>
+<li><strong>stop(true,true)</strong> ： 停止元素所有的动画并清除队列，同时立即完成活动的动画；</li>
+</ul></li>
+</ul>
+
+<h3>jQuery 效果  - Callback 方法</h3>
+
+<ul>
+<li>动画或效果完成后执行的方法；</li>
+<li>无输入参数；</li>
+<li>函数后加括号，会立刻执行 <strong>Callback</strong> 方法，并且动画或效果完成后不再执行 <strong>Callback</strong> 方法；</li>
+</ul>
+
+<h3>jQuery 效果 - Chaining</h3>
+
+<ul>
+<li><p><strong>Chaining</strong> 允许我们在一条语句中运行多个 <strong>jQuery</strong> 方法(在相同元素上)；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#p1&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">),</span><span class="nx">slideUp</span><span class="p">(</span><span class="mi">2000</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="mi">5000</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<h2>jQuery HTML</h2>
+
+<h3>jQuery 获取和设置</h3>
+
+<h4>获取和设置 内容</h4>
+
+<ul>
+<li><strong>text()</strong> ： 元素的文本内容；</li>
+<li><strong>html()</strong> ： 元素的内容(包括 <strong>HTML</strong> 标记)；</li>
+<li><strong>val()</strong> ： 表单字段的值；</li>
+</ul>
+
+<h4>获取和设置 属性</h4>
+
+<ul>
+<li><strong>attr</strong> ： 属性；</li>
+</ul>
+
+<h4>回调函数</h4>
+
+<p>上面四个方法，在设置的时候，都有一个 <strong>可选的</strong> 回调函数；</p>
+
+<ul>
+<li><code>js
+$(&quot;#test&quot;).text(function(i,origText){
+  return &quot;ttt&quot;;
+});
+</code></li>
+</ul>
+
+<ul>
+<li><p><strong>i</strong> ： 被选元素列表中当前元素的下标；</p></li>
+<li><p><strong>origText</strong> ： 原始值(旧值)；</p></li>
+<li><p><strong>return</strong> ： 元素最终要设置的值(回调函数返回的值)；</p></li>
+</ul>
+
+<h3>jQuery 添加元素</h3>
+
+<ul>
+<li><p><strong>append()</strong> ： 在被选元素 <strong>内部的结尾</strong> 插入指定内容；</p></li>
+<li><p><strong>prepend()</strong> ： 在被选元素 <strong>内部的开头</strong> 插入指定内容；</p></li>
+<li><p><strong>after()</strong> ： 在被选元素 <strong>之后</strong> 插入内容；</p></li>
+<li><p><strong>before()</strong> ： 在被选元素 <strong>之前</strong> 插入内容；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;Some appended text.&quot;</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p>上面四个方法都可以一次接收 <strong>无限数量</strong> 的参数；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;111&quot;</span><span class="p">,</span><span class="s2">&quot;222&quot;</span><span class="p">,</span><span class="s2">&quot;333&quot;</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 删除元素</h3>
+
+<ul>
+<li><p><strong>remove()</strong> ： 删除被选元素 <strong>及</strong> 其子元素，可接收一个参数进行过滤；</p></li>
+<li><p><strong>empty()</strong> ： 删除被选元素 <strong>中</strong>  的子元素；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div1&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div2&quot;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div3&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;.italic&quot;</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery CSS 类</h3>
+
+<ul>
+<li><p><strong>addClass()</strong> ： 添加一个或多个类；</p></li>
+<li><p><strong>removeClass()</strong> ： 删除一个或多个类；</p></li>
+<li><p><strong>toggleClass()</strong> ： 添加或删除一个或多个类；</p></li>
+<li><p><strong>css()</strong> ： 设置或返回样式属性；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;important blue&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;background-color&quot;</span><span class="o">:</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;color&quot;</span><span class="o">:</span><span class="s2">&quot;red&quot;</span><span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 尺寸</h3>
+
+<ul>
+<li><strong>jQuery</strong> 提供如下八个处理尺寸的方法：</li>
+<li><strong>width()</strong> ；</li>
+<li><strong>height()</strong> ；</li>
+<li><strong>innerWidth()</strong> ；</li>
+<li><strong>innerHeight()</strong> ；</li>
+<li><strong>outerWidth()</strong> ；</li>
+<li><strong>outerHeight()</strong> ；</li>
+<li><strong>outerWidth(true)</strong> ；</li>
+<li><strong>outerHeight(true)</strong> ；</li>
+<li><img src="http://www.jianwill.cn/image/jquery/jquery-size.gif" alt="jQuery-size" title="jQuery-size"></li>
+</ul>
+
+<h2>jQuery 遍历</h2>
+
+<h3>jQuery 遍历 - 祖先</h3>
+
+<ul>
+<li><p><strong>parent()</strong> ： 返回被选元素的 <strong>直接父元素</strong>，只返回 <strong>上一级</strong> ；</p></li>
+<li><p><strong>parents()</strong> ： 返回被选元素的 <strong>所有祖先元素</strong> ，一路向上直到文档的根元素 (&lt;html&gt;) ，可使用参数过滤；</p></li>
+<li><p><strong>parentsUntil()</strong> ： 返回介于 <strong>两个给定元素之间</strong> 的 <strong>所有祖先元素</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">parent</span><span class="p">();</span>               <span class="c1">// 直接父元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">();</span>          <span class="c1">// 所有祖先元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s2">&quot;ul&quot;</span><span class="p">);</span>      <span class="c1">// 所有祖先元素中的 &lt;ul&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>    <span class="c1">// &lt;span&gt; 到 &lt;div&gt; 之间的祖先元素</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 遍历 - 后代</h3>
+
+<ul>
+<li><p><strong>children()</strong> ： 返回被选元素的 <strong>所有 直接元素</strong> ，只返回 <strong>下一级</strong> ，可使用参数过滤 ；</p></li>
+<li><p><strong>find()</strong> ： 返回被选元素的 <strong>所有后代元素</strong> ，一路想下直到最后一个后代；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">();</span>          <span class="c1">// 所有直接子元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;p.1&quot;</span><span class="p">);</span>     <span class="c1">// 所有直接子元素中类名为&quot;1&quot;的 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">);</span>            <span class="c1">// 所有后代元素中的 &lt;span&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">);</span>               <span class="c1">// &lt;div&gt; 的所有后代元素</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 遍历 - 同胞(siblings)</h3>
+
+<ul>
+<li><p><strong>siblings()</strong> ： 返回被选元素的 <strong>所有 同胞元素</strong> ，可用参数过滤 ；</p></li>
+<li><p><strong>next()</strong> ： 返回被选元素的 <strong>下一个 同胞元素</strong> ；</p></li>
+<li><p><strong>nextAll()</strong> ： 返回被选元素的 <strong>所有 跟随的同胞元素</strong> ，可用参数过滤；</p></li>
+<li><p><strong>nextUntil()</strong> ： 返回介于两个给定参数 <strong>之间</strong> 的 <strong>所有 跟随的同胞元素</strong> ；</p></li>
+<li><p><strong>prev()</strong> ： 与 <strong>next()</strong> 相反；</p></li>
+<li><p><strong>prevAll()</strong> ： 与 <strong>nextAll()</strong> 相反；</p></li>
+<li><p><strong>prevUntil()</strong> ： 与 <strong>nextUntil()</strong> 相反；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>            <span class="c1">// 所有同胞元素中的 &lt;p&gt; 元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">next</span><span class="p">();</span>                   <span class="c1">// 下一个同胞元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">();</span>                <span class="c1">// 所有跟随的同胞元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">(</span><span class="s2">&quot;h3&quot;</span><span class="p">);</span>            <span class="c1">// 所有跟随的 &lt;h3&gt; 同胞元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;h2&quot;</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s2">&quot;h6&quot;</span><span class="p">);</span>      <span class="c1">// 两个参数 之间 的跟随同胞元素</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery 遍历 - 过滤</h3>
+
+<ul>
+<li><p><strong>first()</strong> ： 返回被选元素的 <strong>首个元素</strong> ；</p></li>
+<li><p><strong>last()</strong> ： 返回被选元素的 <strong>最后一个元素</strong> ；</p></li>
+<li><p><strong>eq()</strong> ： 返回被选元素中 <strong>带有指定索引号 的元素</strong> ，索引号从0开始；</p></li>
+<li><p><strong>filter()</strong> ： 返回被选元素中 <strong>匹配 的元素</strong>；</p></li>
+<li><p><strong>not()</strong> ： 返回被选元素中 <strong>不匹配 的元素</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">first</span><span class="p">();</span>                   <span class="c1">// 列表中的首个元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">last</span><span class="p">();</span>                    <span class="c1">// 列表中的最后一个元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>                 <span class="c1">// 列表中的第四个元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;.intro&quot;</span><span class="p">);</span>      <span class="c1">// 列表中类名等于intro的元素</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">not</span><span class="p">(</span><span class="s2">&quot;.intro&quot;</span><span class="p">);</span>         <span class="c1">// 列表中类名不等于intro的元素</span>
+</pre></div></li>
+</ul>
+
+<h2>jQuery Ajax</h2>
+
+<p><strong>AJAX</strong> 是与服务器交换数据的技术，它在不重载页面的情况下，实现了对部分页面的更新。</p>
+
+<h3>jQuery - Ajax load() 方法</h3>
+
+<ul>
+<li><p><strong>load()</strong> ： 从服务器加载数据，并把返回的数据放入被选元素中；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="nx">URL</span><span class="p">,</span><span class="nx">data</span><span class="p">,</span><span class="nx">callback</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div1&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;demo_test.txt&quot;</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div2&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;demo_test.txt #p1&quot;</span><span class="p">);</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p>关于参数：</p>
+
+<ul>
+<li><strong>URL</strong> ： 必需，希望加载的 <strong>URL</strong> ；</li>
+<li><strong>data</strong> ： 可选，查询输入的参数，字符串键/值对集合；</li>
+<li><strong>callback</strong> ： 可选，<strong>load()</strong> 方法完成后(<strong>无论成功与否</strong>)所执行的函数；</li>
+</ul></li>
+<li><p>关于回调函数参数：</p>
+
+<ul>
+<li><strong>responseTxt</strong> - 包含调用成功时的结果；</li>
+<li><strong>statusTxt</strong> - 包含调用的状态；</li>
+<li><strong>xhr</strong> - 包含 <a href="https://www.w3cschool.cn/xml/xml-http.html#" title="XMLHttpRequest 对象">XMLHttpRequest 对象</a> ；</li>
+</ul></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#div1&quot;</span><span class="p">).</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;demo_text.txt&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">responseTxt</span><span class="p">,</span><span class="nx">statusTxt</span><span class="p">,</span><span class="nx">xhr</span><span class="p">){</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">statusTxt</span><span class="o">==</span><span class="s2">&quot;success&quot;</span><span class="p">)</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;External content loaded successfully!&quot;</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">statusTxt</span><span class="o">==</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
+          <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Error: &quot;</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">status</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">statusText</span><span class="p">);</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><strong>提示</strong> ： 在 <strong>load()</strong> 方法中，无论 <strong>AJAX</strong> 请求是否成功，一旦请求完成后，回调函数 <strong>(callback)</strong> ： 立即被触发；</li>
+</ul>
+
+<h3>jQuery - Ajax get() 和 post() 方法</h3>
+
+<ul>
+<li><strong>GET</strong> - 从指定的资源请求数据；</li>
+<li><strong>POST</strong> - 向指定的资源提交要处理的数据；</li>
+</ul>
+
+<h4>jQuery $.get() 方法</h4>
+
+<ul>
+<li><code>js
+$.get(URL,callback);
+</code></li>
+</ul>
+
+<ul>
+<li><p>关于参数：</p>
+
+<ul>
+<li><strong>URL</strong> ： 必需，希望加载的 <strong>URL</strong> ；</li>
+<li><strong>callback</strong> ： 可选，请求成功后所执行的函数名；</li>
+</ul></li>
+<li><p>关于回调参数：</p>
+
+<ul>
+<li><strong>data</strong> ： 被请求页面的内容；</li>
+<li><strong>status</strong> ： 请求的状态；</li>
+</ul></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;demo_text.php&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">status</span><span class="p">){</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;数据：&quot;</span> <span class="o">+</span> <span class="nx">data</span> <span class="o">+</span> <span class="s2">&quot;\n状态：&quot;</span> <span class="o">+</span> <span class="nx">status</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h4>jQuery $.post() 方法</h4>
+
+<ul>
+<li><code>js
+$.post(URL,data,callback);
+</code></li>
+</ul>
+
+<ul>
+<li><p>关于参数：</p>
+
+<ul>
+<li><strong>URL</strong> ： 必需，希望加载的 <strong>URL</strong> ；</li>
+<li><strong>data</strong> ： 可选，连同请求发送的数据；</li>
+<li><strong>callback</strong> ： 可选，请求成功后所执行的函数名；</li>
+</ul></li>
+<li><p>关于回调参数：</p>
+
+<ul>
+<li><strong>data</strong> ： 被请求页面的内容；</li>
+<li><strong>status</strong> ： 请求的状态；</li>
+</ul></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;demo_text.php&quot;</span><span class="p">,</span>
+  <span class="p">{</span>
+      <span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Donald Duck&quot;</span><span class="p">,</span>
+      <span class="nx">city</span><span class="o">:</span><span class="s2">&quot;Duckburg&quot;</span>
+  <span class="p">},</span>
+  <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">status</span><span class="p">){</span>
+      <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Data: &quot;</span> <span class="o">+</span> <span class="nx">data</span> <span class="o">+</span> <span class="s2">&quot;\nStatus: &quot;</span> <span class="o">+</span> <span class="nx">status</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<h3>jQuery - Ajax ajax() 方法</h3>
+
+<p>在 <strong>jQuery</strong> 中，<strong>$.ajax()</strong> 能够实现与 <strong>$.load()，$.get()，$.post()</strong> 方法相同的功能。</p>
+
+<ul>
+<li><code>js
+$.ajax({name:value,name:value,...});
+</code></li>
+</ul>
+
+<ul>
+<li><code>js
+$(&quot;button&quot;).click(function(){
+  $.ajax({
+      url:&quot;demo_text.php&quot;,
+      success:function(result){
+          $(&quot;#div1&quot;).html(result);
+      }
+  })
+});
+</code></li>
+</ul>
+
+<ul>
+<li>更多描述见 <strong><a href="https://www.w3cschool.cn/jquery/ajax-ajax.html" title="$.ajax() 方法">$.ajax() 方法</a></strong> ；</li>
+</ul>
+
+<h2>jQuery 其他</h2>
+
+<p>当同时使用 <strong>jQuery</strong> 和其他框架时， <strong>$</strong> 符号或 <strong>jQuery 语法</strong> 可能会与其他框架存在冲突，这时候只要使用 <strong>jQuery</strong> 中的 <strong>noConflict()</strong> 方法，就可以解决这个问题；</p>
+
+<ul>
+<li><p>使用全名替代简写的方式来使用 <strong>jQuery</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">jQuery</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;jQuery is still working!&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p>创建自己的简写，把 <strong>jQuery</strong> 存入变量然后引用；</p></li>
+<li><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">jq</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+<span class="nx">jq</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">jq</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">jq</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;jQuery is still working!&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li><p>把 <strong>$</strong> 符号作为变量传递给 <strong>ready 方法</strong> ；</p></li>
+<li><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">.</span><span class="nx">noConflict</span><span class="p">();</span>
+<span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;jQuery is still working!&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</pre></div></li>
+</ul>
+
+<ul>
+<li>更多描述见 <a href="https://www.w3cschool.cn/jquery/core-noconflict.html" title="noConflict 方法">noConflict() 方法</a> ；</li>
+</ul>
+
+<h2>jQuery 插件</h2>
+
+<h2>jQuery 拓展阅读</h2>
+
+			          	</article>
+			        </div>
+					</div>
+	      </body>
+	    </html>
+			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+      <script type="text/javascript" src="toc_conf.js"></script>
+      
+			<SCRIPT type="text/javascript" >
+			<!--
+			$(document).ready(function(){
+          var css_conf = eval(markdown_panel_style);
+          $('#readme').css(css_conf)
+          
+          var conf = eval(jquery_ztree_toc_opts);
+  				$('#tree').ztree_toc(conf);
+
+				
+			});
+			//-->
+			</SCRIPT>
+	  

@@ -1,0 +1,607 @@
+
+	    <html>
+	      <head>
+				  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	        <title>myhtml</title>
+					
+					<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+					<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+			
+				  <style>
+					pre {
+					    counter-reset: line-numbering;
+					    border: solid 1px #d9d9d9;
+					    border-radius: 0;
+					    background: #fff;
+					    padding: 0;
+					    line-height: 23px;
+					    margin-bottom: 30px;
+					    white-space: pre;
+					    overflow-x: auto;
+					    word-break: inherit;
+					    word-wrap: inherit;
+					}
+
+					pre a::before {
+					  content: counter(line-numbering);
+					  counter-increment: line-numbering;
+					  padding-right: 1em; /* space after numbers */
+					  width: 25px;
+					  text-align: right;
+					  opacity: 0.7;
+					  display: inline-block;
+					  color: #aaa;
+					  background: #eee;
+					  margin-right: 16px;
+					  padding: 2px 10px;
+					  font-size: 13px;
+					  -webkit-touch-callout: none;
+					  -webkit-user-select: none;
+					  -khtml-user-select: none;
+					  -moz-user-select: none;
+					  -ms-user-select: none;
+					  user-select: none;
+					}
+
+					pre a:first-of-type::before {
+					  padding-top: 10px;
+					}
+
+					pre a:last-of-type::before {
+					  padding-bottom: 10px;
+					}
+
+					pre a:only-of-type::before {
+					  padding: 10px;
+					}
+			
+					.highlight { background-color: #ffffcc } /* RIGHT */
+					</style>
+	      </head>
+	      <body>
+				  <div>
+							<div style='width:25%;'>
+									<ul id="tree" class="ztree" style='width:100%'>
+		
+									</ul>
+							</div>
+			        <div id='readme' style='width:70%;margin-left:20%;'>
+			          	<article class='markdown-body'>
+			            	<style>.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f0f0f0; }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #60a0b0; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .cpf { color: #60a0b0; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sa { color: #4070a0 } /* Literal.String.Affix */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .dl { color: #4070a0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #06287e } /* Name.Function.Magic */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .vm { color: #bb60d5 } /* Name.Variable.Magic */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style>
+<p><a href="http://www.jianwill.cn/md/inlist/myhtml.html"><strong>查看目录版</strong></a></p>
+
+<p><a href="http://www.jianwill.cn/md/myHtml_2019-2-26.html"><strong>查看原版</strong></a></p>
+
+<h2>Html 常用代码</h2>
+
+<ul>
+<li> 在HTML页面的头部申明字符为 <strong>UTF-8</strong> 可以解决在浏览器中出现中文乱码的现象。</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>页面标题<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>HTML 标题：通过 &lt;h1&gt; - &lt;h6&gt; 标签来定义。</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>一级标题<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>二级标题<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+  ...
+  <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>三级标题<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>HTML 段落：通过 &lt;p&gt; 标签来定义。</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是一个段落。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是另一个段落。<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>HTML 链接：可以跳转到<strong>外部链接地址</strong>，也可以链接到当前页面的某部分实现<strong>内部导航功能</strong>。</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="p">&gt;</span>空连接<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.w3cschool.cn&quot;</span><span class="p">&gt;</span>w3cschool<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>          //链接到外部地址
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;ct1&quot;</span><span class="p">&gt;</span>词条1<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>                       //跳转到页面内部，用 #id 链接
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#ct1&quot;</span><span class="p">&gt;</span>跳转到词条1<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>HTML 图像：通过 &lt;img&gt; 标签来定义。</li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://www.your-image-source.com/your-image.jpg&quot;</span><span class="p">&gt;</span>      //img是自关闭元素，不需要结束标记
+</pre></div>
+<ul>
+<li><p>HTML 格式化：</p>
+
+<ul>
+<li>文本格式化</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>这个文本是加粗的<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>                 //加粗
+<span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>这个文本也是加粗的<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>            //加粗，并表示文本重要
+<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>这个文本是斜体的<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>                 //斜体
+<span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>这个文本是斜体的<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>               //斜体，并表示文本重要
+<span class="p">&lt;</span><span class="nt">big</span><span class="p">&gt;</span>这个文本字体放大<span class="p">&lt;/</span><span class="nt">big</span><span class="p">&gt;</span>             //字体放大
+<span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>这个文本是缩小的<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>             //字体缩小
+这个文本包含<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>上标<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;</span>             //上标
+这个文本包含<span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>下标<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>             //下标
+</pre></div>
+<ul>
+<li>预文本格式化</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>                           //pre标签保存文本中的空行和空格
+此例样式如何使用 pre 标签     
+对 空行 和    空格
+进行控制
+<span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>&quot;计算机输出&quot;标签</li>
+</ul>
+<div class="highlight"><pre><span></span>//这些标签常用语显示 计算机/编程 代码
+<span class="p">&lt;</span><span class="nt">code</span><span class="p">&gt;</span>计算机输出<span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;</span>                    //计算机输出
+<span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>键盘输入<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span>                 //键盘输入
+<span class="p">&lt;</span><span class="nt">tt</span><span class="p">&gt;</span>打字机文本<span class="p">&lt;/</span><span class="nt">tt</span><span class="p">&gt;</span>                    //打字机文本
+<span class="p">&lt;</span><span class="nt">samp</span><span class="p">&gt;</span>计算机代码样本<span class="p">&lt;/</span><span class="nt">samp</span><span class="p">&gt;</span>              //计算机代码样本
+<span class="p">&lt;</span><span class="nt">var</span><span class="p">&gt;</span>计算机变量<span class="p">&lt;/</span><span class="nt">var</span><span class="p">&gt;</span>                  //计算机变量
+</pre></div>
+<ul>
+<li>地址</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>                       //表示地址
+Written by XXXX
+yyyyy
+<span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>缩写和首字母缩写</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">abbr</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;etcetera&quot;</span><span class="p">&gt;</span>etc<span class="p">&lt;/</span><span class="nt">abbr</span><span class="p">&gt;</span>               //缩略词，用title表示
+<span class="p">&lt;</span><span class="nt">acronym</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;World Wide Web&quot;</span><span class="p">&gt;</span>WWW<span class="p">&lt;/</span><span class="nt">acronym</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>文字方向</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>该段文字从左到右显示<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>                   //默认从左到右
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>                             //用bdo+dir从右到左显示
+    <span class="p">&lt;</span><span class="nt">bdo</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;rtl&quot;</span><span class="p">&gt;</span>该段文字从右到左显示<span class="p">&lt;/</span><span class="nt">bdo</span><span class="p">&gt;</span>         //ltr左，rtl右 
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span> <span class="na">dir</span><span class="o">=</span><span class="s">&quot;rtl&quot;</span><span class="p">&gt;</span>从左到右靠右端对其显示<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>              //从左到右，靠右侧对其显示
+</pre></div>
+<ul>
+<li>块引用</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>                             //用<span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>来定义短的引用语
+    WWF&#39;s goal is to:
+    <span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>AAAAA<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>,
+    <span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>BBBBB<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>,
+    <span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>CCCCC<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>
+    We hope they succeed.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>删除字效果和插入字效果</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">del</span><span class="p">&gt;</span>删除字<span class="p">&lt;/</span><span class="nt">del</span><span class="p">&gt;</span>                    //删除字
+<span class="p">&lt;</span><span class="nt">ins</span><span class="p">&gt;</span>插入字<span class="p">&lt;/</span><span class="nt">ins</span><span class="p">&gt;</span>                    //插入字
+</pre></div></li>
+<li><p>HTML 头部</p>
+
+<ul>
+<li>title：定义了HTML文档的标题</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>页面标题<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>base：定义了所有链接的URL</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.w3cschool.cn/statics/images/w3c/&quot;</span> <span class="na">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;logo.png&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>meta：提供了HTML文档的meta标记</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>W3Cschool(w3cschool.cn)<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;description&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;免费web教程&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;keywords&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;HTML,CSS,XML,JavaScript&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;author&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;W3Cschool&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div></li>
+<li><p>HTML CSS</p>
+
+<ul>
+<li>内联样式 -  在HTML元素中使用&quot;<strong>style</strong>&quot;属性。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:blue;margin-left:20px&quot;</span><span class="p">&gt;</span>
+    This is a garagraph.
+<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>内部样式表 - 在HTML文档头部 &lt;<strong>head</strong>&gt;区域使用 &lt;<strong>style</strong>&gt;元素来包含 CSS 。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span><span class="p">&gt;</span>
+        <span class="nt">body</span> <span class="p">{</span><span class="k">background-color</span><span class="p">:</span> <span class="kc">yellow</span><span class="p">;}</span>
+        <span class="nt">p</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;}</span>
+    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div>
+<ul>
+<li>外部引用 - 使用外部 CSS 文件。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;mystyle.css&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</pre></div></li>
+<li><p>HTML 表格</p>
+
+<ul>
+<li><code>html
+&lt;table border=&quot;0&quot;&gt;          //定义表格+无边框
+&lt;tr&gt;                //定义表格的行
+    &lt;th&gt;这是表头&lt;/th&gt;       //定义表格的表头
+    &lt;td&gt;这是单元格&lt;/td&gt;        //定义表格单元
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><code>html
+&lt;td colspan=&quot;2&quot;&gt;AAA&lt;/td&gt;        //跨2列的单元格
+&lt;tr rowspan=&quot;3&quot;&gt;            //跨3行的单元格
+    &lt;td&gt;BBB&lt;/td&gt;
+&lt;/tr&gt;
+</code></li>
+</ul>
+
+<ul>
+<li><code>html
+&lt;table border=&quot;1&quot; &gt;...&lt;/table&gt;      //单元格间距
+&lt;table cellpadding=&quot;0&quot;&gt;...&lt;/table&gt;  //单元格边距
+&lt;table cellspacing=&quot;0&quot;&gt;...&lt;/table&gt;  //单元格间距(0时单元格边框为一条细线)
+</code></li>
+</ul>
+
+<ul>
+<li><p>HTML 列表</p>
+
+<ul>
+<li>无序列表</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>coffee<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>milk<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+// css样式可修改:list-style-type:disc,circle,square
+</pre></div>
+<ul>
+<li>有序列表</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>coffee<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>milk<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>...<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+// ol 可加属性 type=&quot;A,a,I,i&quot;
+// ol 可加属性 start=&quot;number&quot;，只能是数字，H5不推荐
+</pre></div>
+<ul>
+<li>自定义列表</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>                            //自定义列表开始
+    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Coffee<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>                 //自定义列表项
+    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> - black hot drink<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>             //自定义列表项定义
+    <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Milk<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span> - white cold drink<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</pre></div></li>
+<li><p>HTML 区块</p>
+
+<ul>
+<li><code>
+区块元素：自动换行，可设定宽度，&lt;h1&gt;，&lt;p&gt;，&lt;ul&gt;，&lt;table&gt;，&lt;div&gt;等
+内联元素：不自动换行，不可设定宽度，&lt;b&gt;，&lt;td&gt;，&lt;a&gt;，&lt;img&gt;，&lt;span&gt;等
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>HTML 布局</p>
+
+<ul>
+<li><code>html
+&lt;div&gt;
+&lt;div style=&quot;float:left&quot;&gt;
+    &lt;b&gt;我在左边&lt;/b&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;b&gt;我在右边&lt;/b&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>HTML 表单</p>
+
+<ul>
+<li><code>html
+&lt;form action=&quot;xxx&quot; method=&quot;post&quot;&gt;           //定义表单
+&lt;fieldset&gt;                      //定义带边框的表单，非必须
+    &lt;legend&gt;                    //和fieldset一起使用，表示边框标题
+        表单边框标题
+    &lt;/legend&gt;
+    //表单控件
+    user:&lt;input type=&quot;text&quot; name=&quot;user&quot;&gt;
+    password:&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;
+    //单选
+    &lt;input type&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot;&gt;Male&lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot;&gt;Female&lt;br&gt;
+    //多选
+    &lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Bike&quot;&gt;I have a bike &lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Car&quot;&gt;I have a car&lt;br&gt;
+    //简单下拉框
+    &lt;select name=&quot;cars&quot;&gt;
+        &lt;optgroup label=&quot;Swedish Cars&quot;&gt;                 //选项分组1
+            &lt;option value=&quot;volvo&quot;&gt;Volvo&lt;/option&gt;
+            &lt;option value=&quot;saab&quot;&gt;Saab&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label=&quot;German Cars&quot;&gt;                  //选项分组2
+            &lt;option value=&quot;mercedes&quot;&gt;Mercedes&lt;/option&gt;
+            &lt;option value=&quot;audi&quot; selected&gt;Audi&lt;/option&gt;         //默认选中值
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+    //文本域
+    &lt;textarea rows=&quot;10&quot; cols=&quot;50&quot;&gt;      
+        我是一个文本框。
+    &lt;/textarea&gt;
+    //提交按钮(url在form上配置)
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><code>html
+//label 元素的使用，点击label元素，等同于点击对应的表单控件
+&lt;form action=&quot;xxx&quot; method=&quot;post&quot;&gt;
+    &lt;label for=&quot;ma&quot;&gt;Male&lt;/label&gt;&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot; id=&quot;ma&quot;&gt;&lt;br&gt;
+    &lt;label for=&quot;fe&quot;&gt;Female&lt;/label&gt;&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot; id=&quot;fe&quot;&gt;
+&lt;/form&gt;
+</code></li>
+</ul>
+
+<ul>
+<li><p>HTML 框架</p>
+
+<ul>
+<li><code>html
+&lt;iframe src=&quot;demo_iframe.html&quot; name=&quot;iframe_a&quot;&gt;&lt;/iframe&gt;            //定义iframe
+&lt;p&gt;
+&lt;a href=&quot;https://www.w3cschool.cn&quot; target=&quot;iframe_a&quot;&gt;W3CSCHOOL.CN&lt;/a&gt;   //target表示链接在iframe框架中打开
+&lt;/p&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>HTML 字符实体</p>
+
+<ul>
+<li><code>
+&lt;  等同于 &amp;lt;
+&gt;  等同于 &amp;gt;
+©  等同于 &amp;copy;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>HTML URL</p>
+
+<ul>
+<li><code>
+scheme://host.domain:port/path/filename
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>说明</p>
+
+<ul>
+<li>scheme - 定义因特网服务的类型。最常见的是 <strong>http</strong> 。</li>
+<li>host - 定义域主机（<strong>http</strong> 的默认主机是 <strong>www</strong>）。</li>
+<li>domain - 定义因特网域名，比如 w3cschool.cn 。</li>
+<li>:post - 定义主机上的端口号（<strong>http</strong> 默认的端口号是 80）。</li>
+<li>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。</li>
+<li>filename - 定义文档/资源的名称。</li>
+</ul></li>
+</ul>
+
+<h2>HTML 媒体</h2>
+
+<ul>
+<li><p>插件可以使用 &lt;object&gt; 和 &lt;embed&gt; 标签来显示，两者效果都是类似，可用于插入对象(音频，视频，HTML页面，Java小程序，PDF 阅读器，Flash 播放器等)，区别是：</p>
+
+<ul>
+<li>object ：HTML4 的标准标签， &lt;param&gt; 配合使用。</li>
+<li>embed：HTML5 的新标签，在HTML4 中是非法的。</li>
+<li>所以，两者一般一起使用，确保能兼容 新旧 浏览器。</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;550&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">data</span><span class="o">=</span><span class="s">&quot;heartbeats.mp3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">embed</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;550&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;heartbeats.mp3&quot;</span><span class="p">&gt;</span>
+    //合并使用
+    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;550&quot;</span> <span class="na">height</span><span class="o">=</span><span class="s">&quot;400&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;headerbeats.mp3&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">moive</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;myflashmovie.swf&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">quality</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;high&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">param</span> <span class="na">name</span><span class="o">=</span><span class="s">bgcolor</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;#ffffff&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;heartbeats.mp3&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</pre></div></li>
+<li><p>Audio：音频文件</p>
+
+<ul>
+<li>使用 &lt;audio&gt; 和 &lt;source&gt; 标签来定义音频。</li>
+<li>&lt;audio&gt; 是一个 HTML5 元素，在 HTML4 中是非法的，但在所有浏览器中都有效。</li>
+<li>一般和 &lt;embed&gt; 一起使用，保证兼容性。</li>
+<li><code>html
+&lt;audio controls height=&quot;100&quot; width=&quot;100&quot;&gt;
+&lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+&lt;source src=&quot;horse.mp3&quot; type=&quot;audio/ogg&quot;&gt;
+&lt;embed height=&quot;50&quot; width=&quot;100&quot; src=&quot;horse.mp3&quot;&gt;
+&lt;/audio&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li><p>Videos：视频文件</p>
+
+<ul>
+<li>使用 &lt;video&gt; 和 &lt;source&gt; 标签来定义视频。</li>
+<li>&lt;video&gt; 是一个 HTML5 元素，在 HTML4 中是非法的，但在所有浏览器中都有效。</li>
+<li>一般和 &lt;object&gt; ， &lt;embed&gt; 一起使用，保证兼容性。</li>
+<li><code>html
+&lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;
+&lt;source src=&quot;moive.mp4&quot; type=&quot;video/mp4&quot;&gt;
+&lt;source src=&quot;moive.ogg&quot; type=&quot;video/ogg&quot;&gt;
+&lt;source src=&quot;moive.webm&quot; type=&quot;video/webm&quot;&gt;
+&lt;object data=&quot;moive.mp4&quot; width=&quot;320&quot; height=&quot;240&quot; &gt;
+    &lt;embed src=&quot;moive.swf&quot; width=&quot;320&quot; height=&quot;240&quot;&gt;
+&lt;/object&gt;
+&lt;/video&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<h2>HTML 拓展阅读</h2>
+
+<ul>
+<li><p>常用代码</p>
+
+<ul>
+<li><code>
+//超链接设置
+text-decoration:参数
+参数取值范围
+underline:为文字加下划线
+overline:为文字加上划线
+line-through:为文字加删除线
+blink:使文字闪烁
+none:不显示上述任何效果
+</code></li>
+</ul></li>
+</ul>
+
+<ul>
+<li>常用标签：见 <strong>CSS.md</strong> 文档。</li>
+</ul>
+
+			          	</article>
+			        </div>
+					</div>
+	      </body>
+	    </html>
+			<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+			<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+			<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+      <script type="text/javascript" src="toc_conf.js"></script>
+      
+			<SCRIPT type="text/javascript" >
+			<!--
+			$(document).ready(function(){
+          var css_conf = eval(markdown_panel_style);
+          $('#readme').css(css_conf)
+          
+          var conf = eval(jquery_ztree_toc_opts);
+  				$('#tree').ztree_toc(conf);
+
+				
+			});
+			//-->
+			</SCRIPT>
+	  
