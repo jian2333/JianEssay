@@ -536,11 +536,14 @@ toFixed(2);
 
 <ul>
 <li><p><strong>test()</strong> ： 检索，匹配返回 <strong>true</strong> ，否则返回 <strong>false</strong> ；</p></li>
-<li><p><strong>exec()</strong> ： 检索，匹配返回 <strong>检索条件</strong> ，否则返回 <strong>null</strong> ；</p></li>
+<li><p><strong>exec()</strong> ： 检索，匹配返回 <strong>检索条件</strong> (返回结果也是数组，数组第一个元素为 <strong>检索条件</strong>) ，否则返回 <strong>null</strong> ；</p></li>
 <li><p><strong>compile()</strong> ： 用于 <strong>改变检索条件</strong> ，既可以改变检索模式，也可以添加或删除第二个参数；</p></li>
 <li><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">patt</span> <span class="o">=</span> <span class="sr">/e/</span><span class="p">;</span>
 <span class="nx">patt</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="s2">&quot;The best things in life are free!&quot;</span><span class="p">);</span>   <span class="c1">// 返回 true</span>
 <span class="nx">patt</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="s2">&quot;The best things in life are free!&quot;</span><span class="p">);</span>   <span class="c1">// 返回 e</span>
+<span class="c1">// exec 返回格式结果如下：</span>
+<span class="c1">// /l/g.exec(&#39;hello world&#39;);</span>
+<span class="c1">// [&quot;l&quot;, index: 2, input: &quot;hello world&quot;, groups: undefined]</span>
 </pre></div></li>
 </ul>
 
@@ -567,7 +570,7 @@ toFixed(2);
 
 <ul>
 <li>href=&quot;javascript:void(0)&quot; 或者 href=&quot;javascript:;&quot; ，但是这样会导致页面跳转，解决方案如下：</li>
-<li><code>js
+<li><code>html
 // 原代码：
 &lt;a href=&quot;javascript:void(0)&quot; title=&quot;关闭&quot; onclick=&quot;delbook();&quot;&gt;关闭&lt;/a&gt;
 // 或者
@@ -864,7 +867,7 @@ document.getElementById(&quot;p1&quot;).style.visibility=&#39;hidden&#39;;
 <td>元素获取焦点时</td>
 </tr>
 <tr>
-<td>onfocus*<em>sin</em>*</td>
+<td>onfocus*<em>in</em>*</td>
 <td>元素即将获取焦点时，不冒泡</td>
 </tr>
 <tr>
@@ -1120,8 +1123,7 @@ element.addEventListener(event, function, useCapture);
 var points = [40,100,1,5,25,10];
 points.sort();      //字母升序 [1,10,100,25,40,5]
 points.sort(function(a,b){return a-b});     //数字升序  [1,5,10,25,40,100]
-points.sort(function(a,b){return b-a});
-//数字降序  [100,40,25,10,5,1]
+points.sort(function(a,b){return b-a});     //数字降序  [100,40,25,10,5,1]
 </code></li>
 </ul></li>
 </ul>
