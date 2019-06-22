@@ -1110,7 +1110,8 @@ box-sizing: border-box;
 }
 /* 该属性有3个值
 content-box: 元素的宽高，只包含content，不包含padding，border，margin，outline等。
-border-box: 元素的宽高，包含所有边框，包括padding，border，margin，outline等。
+border-box: 元素的宽高，包含content，padding，border，不包含margin，outline等。
+默认是content-box。某些需求下使用border-box，更符合使用习惯(不需要担心padding，border导致的元素变形等)
 */
 ```</li>
 </ul></li>
